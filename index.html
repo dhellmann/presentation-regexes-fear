@@ -183,6 +183,14 @@ showregex("Does the pattern match this text?", "tt")
 Does the pa<mark>tt</mark>ern match this text?
 </pre>
 <!--[[[end]]]-->
+
+<aside class="notes">
+<p>Sometimes it's useful to look for the same expression appearing
+multiple times in a row.</p>
+
+<p>One way to do that is to repeat the expression in the pattern. The
+expression language supports repetition rules directly, though.</p>
+</aside>
 </section>
 
 
@@ -203,6 +211,12 @@ showregex("Does the pattern match this text?", "t{2}")
 Does the pa<mark>tt</mark>ern match this text?
 </pre>
 <!--[[[end]]]-->
+
+<aside class="notes">
+<p>This expression means match the letter T appearing twice.</p>
+
+<p>It's obviously more of a shortcut for more recurrences than 2.</p>
+</aside>
 </section>
 
 
@@ -223,6 +237,10 @@ showregex("Does the pattern match this text?", "t{2,3}")
 Does the pa<mark>tt</mark>ern match this text?
 </pre>
 <!--[[[end]]]-->
+
+<aside class="notes">
+<p>This syntax means match T appearing between 2 and 3 times.</p>
+</aside>
 </section>
 
 
@@ -243,6 +261,96 @@ showregex("Does the pattern match this text?", "t+")
 Does <mark>t</mark>he pa<mark>tt</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
 </pre>
 <!--[[[end]]]-->
+
+<aside class="notes">
+<p>This syntax means match T at least one time.</p>
+
+<p>The results look similar to the first expression, except that the
+pair of Ts in "pattern" are matched as one instance.</p>
+</aside>
+</section>
+
+
+<section>
+<h2>Wildcards</h2>
+
+<pre>
+Does the pattern match this text?
+
+t..t
+</pre>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "t..t")
+]]]-->
+<pre data-trim class="fragment fade-in">
+Does the pattern match this <mark>text</mark>?
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>Sometime's it's useful to match part of the text without being
+explicit about it. The dot matches any character.</p>
+
+<p>This example looks for 4 characters a T followed by any 2
+characters followed by another T.</p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Wildcards</h2>
+
+<pre>
+Does the pattern match this text?
+
+t.+t
+</pre>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "t.+t")
+]]]-->
+<pre data-trim class="fragment fade-in">
+Does <mark>the pattern match this text</mark>?
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>Dots can be combined with wildcards, too, but be careful!</p>
+
+<p>Repetition using + is "greedy" by default, and when that's combined
+with the dot wildcard it can result in matching more than
+expected.</p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Non-greedy Repetition</h2>
+
+<pre>
+Does the pattern match this text?
+
+t.+?t
+</pre>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "t.+t?")
+]]]-->
+<pre data-trim class="fragment fade-in">
+Does <mark>the pattern match this text</mark>?
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>Dots can be combined with wildcards, too, but be careful!</p>
+
+<p>Repetition using + is "greedy" by default, and when that's combined
+with the dot wildcard it can result in matching more than
+expected.</p>
+</aside>
 </section>
 
 
