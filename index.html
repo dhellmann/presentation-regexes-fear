@@ -479,6 +479,104 @@ Does <mark>th</mark>e pa<mark>tt</mark>ern ma<mark>tc</mark>h <mark>th</mark>is 
 
 
 <section>
+<h2>Character Classes: Digits</h2>
+
+<!--[[[cog
+showregex("Athens, 30605", "\d{5}")
+]]]-->
+<pre data-trim>
+Athens, 30605
+
+\d{5}
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Athens, <mark>30605</mark>
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>Several pre-defined character classes are available for use. They
+are expressed using a backslash to escape a character mneumonic. In
+this case, \d means a digit.</p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Character Classes: Digits</h2>
+
+<!--[[[cog
+showregex("Athens, 30605", "\D+")
+]]]-->
+<pre data-trim>
+Athens, 30605
+
+\D+
+</pre>
+
+<pre data-trim class="fragment fade-in">
+<mark>Athens, </mark>30605
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>The lower and upper case versions of an escape sequence are usually
+opposites. So backslash uppercase D means "not a digit".</p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Character Classes: Whitespace</h2>
+
+<!--[[[cog
+showregex("Athens, 30605", "\s+")
+]]]-->
+<pre data-trim>
+Athens, 30605
+
+\s+
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Athens,<mark> </mark>30605
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>The whitespace class matches tabs, spaces, and newlines.</p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Character Classes: Whitespace</h2>
+
+<!--[[[cog
+showregex("Athens, 30605", "\S+")
+]]]-->
+<pre data-trim>
+Athens, 30605
+
+\S+
+</pre>
+
+<pre data-trim class="fragment fade-in">
+<mark>Athens,</mark> <mark>30605</mark>
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+</aside>
+</section>
+
+
+
+<section>
 <small>
   <a href="https://github.com/dhellmann/presentation-regexes-fear">http://github.com/dhellmann/presentation-regexes-fear</a><br/>
   <a href="https://pymotw.com/3/re/">https://pymotw.com/3/re</a>
