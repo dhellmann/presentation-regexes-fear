@@ -355,6 +355,55 @@ expected.</p>
 
 
 
+<section>
+<h2>Repetition</h2>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "t.*t")
+]]]-->
+<pre data-trim>
+Does the pattern match this text?
+
+t.*t
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Does <mark>the pattern match this text</mark>?
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>A * instead of + means "0 or more"</p>
+<p>Again, the greedy operator has consumed the entire input text.</p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Non-greedy Repetition</h2>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "t.*?t")
+]]]-->
+<pre data-trim>
+Does the pattern match this text?
+
+t.*?t
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>Adding a question mark gives us 3 matches again</p>
+</aside>
+</section>
+
+
+
 			</div>
 		</div>
 
