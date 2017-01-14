@@ -713,7 +713,7 @@ Does the pattern match this text?
 <pre data-trim class="fragment fade-in">
 Does the pattern match this <mark>text?</mark>
 
- 1 ex
+(1, 1) ex
 </pre>
 <!--[[[end]]]-->
 
@@ -722,7 +722,36 @@ Does the pattern match this <mark>text?</mark>
 for the characters between Ts at the start and end of a word.</p>
 
 <p>The entire pattern matches "text?" at the end of the string, but
-the group only contains "ex".<p>
+the group only contains "ex".</p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Grouping</h2>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", r"\b(t\w{2}|t..t)\W")
+]]]-->
+<p><tt>\b(t\w{2}|t..t)\W</tt></p>
+<pre data-trim>
+Does the pattern match this text?
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Does <mark>the </mark>pattern match this <mark>text?</mark>
+
+(1, 1) the
+
+(2, 1) text
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>A vertical bar within a group defines an alternate pattern. This
+pattern looks for three letter words starting with T or four letter
+words starting and ending with T.</p>
 </aside>
 </section>
 

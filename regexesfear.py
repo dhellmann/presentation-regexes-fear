@@ -30,10 +30,11 @@ def showregex(s, p):
             print(s[last:], end='')
         print()
 
-        if m.groups():
-            print()
-            for i, g in enumerate(m.groups(), 1):
-                print('{:2d} {}'.format(i, g))
+        for i, m in enumerate(pat.finditer(s), 1):
+            if m.groups():
+                print()
+                for j, g in enumerate(m.groups(), 1):
+                    print('({}, {}) {}'.format(i, j, g))
 
         # Show the numbers of each match.
         # prev = 0
