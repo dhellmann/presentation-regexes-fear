@@ -79,10 +79,9 @@ from showcode import showcode, runscript
 <!--[[[cog
 showregex("Does the pattern match this text?", "t")
 ]]]-->
+<p><tt>t</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -142,10 +141,9 @@ the language syntax.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "this")
 ]]]-->
+<p><tt>this</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-this
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -173,10 +171,9 @@ that will be clear as the patterns get more complicated.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "tt")
 ]]]-->
+<p><tt>tt</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-tt
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -201,10 +198,9 @@ expression language supports repetition rules directly, though.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "t{2}")
 ]]]-->
+<p><tt>t{2}</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t{2}
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -227,10 +223,9 @@ Does the pa<mark>tt</mark>ern match this text?
 <!--[[[cog
 showregex("Does the pattern match this text?", "t{2,3}")
 ]]]-->
+<p><tt>t{2,3}</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t{2,3}
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -251,10 +246,9 @@ Does the pa<mark>tt</mark>ern match this text?
 <!--[[[cog
 showregex("Does the pattern match this text?", "t+")
 ]]]-->
+<p><tt>t+</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t+
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -277,10 +271,9 @@ pair of Ts in "pattern" are matched as one instance.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "t..t")
 ]]]-->
+<p><tt>t..t</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t..t
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -305,10 +298,9 @@ characters followed by another T.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "t.+t")
 ]]]-->
+<p><tt>t.+t</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t.+t
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -333,10 +325,9 @@ expected.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "t.+?t")
 ]]]-->
+<p><tt>t.+?t</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t.+?t
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -361,10 +352,9 @@ expected.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "t.*t")
 ]]]-->
+<p><tt>t.*t</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t.*t
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -386,10 +376,9 @@ Does <mark>the pattern match this text</mark>?
 <!--[[[cog
 showregex("Does the pattern match this text?", "t.*?t")
 ]]]-->
+<p><tt>t.*?t</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t.*?t
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -410,10 +399,9 @@ Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
 <!--[[[cog
 showregex("Does the pattern match this text?", "t[aeiou]")
 ]]]-->
+<p><tt>t[aeiou]</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t[aeiou]
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -435,10 +423,9 @@ can match.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "t[^aeiou]")
 ]]]-->
+<p><tt>t[^aeiou]</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t[^aeiou]
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -460,10 +447,9 @@ is negated and the match must not be a member.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "t[a-zA-Z]")
 ]]]-->
+<p><tt>t[a-zA-Z]</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-t[a-zA-Z]
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -484,10 +470,9 @@ Does <mark>th</mark>e pa<mark>tt</mark>ern ma<mark>tc</mark>h <mark>th</mark>is 
 <!--[[[cog
 showregex("Athens, 30605", "\d{5}")
 ]]]-->
+<p><tt>\d{5}</tt></p>
 <pre data-trim>
 Athens, 30605
-
-\d{5}
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -510,10 +495,9 @@ this case, \d means a digit.</p>
 <!--[[[cog
 showregex("Athens, 30605", "\D+")
 ]]]-->
+<p><tt>\D+</tt></p>
 <pre data-trim>
 Athens, 30605
-
-\D+
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -535,10 +519,9 @@ opposites. So backslash uppercase D means "not a digit".</p>
 <!--[[[cog
 showregex("Athens, 30605", "\s+")
 ]]]-->
+<p><tt>\s+</tt></p>
 <pre data-trim>
 Athens, 30605
-
-\s+
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -559,10 +542,9 @@ Athens,<mark> </mark>30605
 <!--[[[cog
 showregex("Athens, 30605", "\S+")
 ]]]-->
+<p><tt>\S+</tt></p>
 <pre data-trim>
 Athens, 30605
-
-\S+
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -582,10 +564,9 @@ Athens, 30605
 <!--[[[cog
 showregex("Athens, 30605", "\w+")
 ]]]-->
+<p><tt>\w+</tt></p>
 <pre data-trim>
 Athens, 30605
-
-\w+
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -608,10 +589,9 @@ locale-aware, which is especially useful for alphanumeric.<p>
 <!--[[[cog
 showregex("Athens, 30605", "\W+")
 ]]]-->
+<p><tt>\W+</tt></p>
 <pre data-trim>
 Athens, 30605
-
-\W+
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -631,10 +611,9 @@ Athens<mark>, </mark>30605
 <!--[[[cog
 showregex("Does the pattern match this text?", "^t")
 ]]]-->
+<p><tt>^t</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-^t
 </pre>
 
 <pre data-trim class="fragment fade-in">
@@ -657,10 +636,9 @@ appears at the start of the string or line.</p>
 <!--[[[cog
 showregex("Does the pattern match this text?", "\?$")
 ]]]-->
+<p><tt>\?$</tt></p>
 <pre data-trim>
 Does the pattern match this text?
-
-\?$
 </pre>
 
 <pre data-trim class="fragment fade-in">

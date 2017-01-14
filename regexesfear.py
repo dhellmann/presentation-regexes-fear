@@ -6,8 +6,10 @@ from output import capture
 
 @capture
 def showregex(s, p):
+    print('<p><tt>{}</tt></p>'.format(p))
     print('<pre data-trim>')
-    print('{}\n\n{}'.format(s, p))
+    #print('{}\n\n{}'.format(s, p))
+    print(s)
     print('</pre>\n')
     print('<pre data-trim class="fragment fade-in">')
 
