@@ -68,6 +68,9 @@ import re
 <li>Finding function definitions in a file or lines in a log file.</li>
 <li>Parsing data files.</li>
 <li>Search and replace using a text editor.</li>
+</ul>
+
+<p>They show up in a lot of Unix tools and editors.</p>
 </aside>
 
 </section>
@@ -75,12 +78,10 @@ import re
 
 
 <section>
-  <h2>Simple Example Expression</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t")
 ]]]-->
-<p><tt>t</tt></p>
+<h2><tt>t</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -91,9 +92,9 @@ Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark
 <!--[[[end]]]-->
 
 <aside class="notes">
-The simplest pattern is a single character, such as this T.
+<p>The simplest pattern is a single character, such as this T.</p>
 
-It would match 7 times in the input text.
+<p>It would match 7 times in the input text.</p>
 </aside>
 </section>
 
@@ -137,12 +138,10 @@ the language syntax.</p>
 
 
 <section>
-<h2>Multi-part Expressions</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "this")
 ]]]-->
-<p><tt>this</tt></p>
+<h2><tt>this</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -167,12 +166,10 @@ that will be clear as the patterns get more complicated.</p>
 
 
 <section>
-<h2>Repetition</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "tt")
 ]]]-->
-<p><tt>tt</tt></p>
+<h2><tt>tt</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -194,12 +191,10 @@ expression language supports repetition rules directly, though.</p>
 
 
 <section>
-<h2>Repetition</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t{2}")
 ]]]-->
-<p><tt>t{2}</tt></p>
+<h2><tt>t{2}</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -219,12 +214,10 @@ Does the pa<mark>tt</mark>ern match this text?
 
 
 <section>
-<h2>Repetition</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t{2,3}")
 ]]]-->
-<p><tt>t{2,3}</tt></p>
+<h2><tt>t{2,3}</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -242,12 +235,10 @@ Does the pa<mark>tt</mark>ern match this text?
 
 
 <section>
-<h2>Repetition</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t+")
 ]]]-->
-<p><tt>t+</tt></p>
+<h2><tt>t+</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -267,12 +258,10 @@ pair of Ts in "pattern" are matched as one instance.</p>
 
 
 <section>
-<h2>Wildcards</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t..t")
 ]]]-->
-<p><tt>t..t</tt></p>
+<h2><tt>t..t</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -286,20 +275,18 @@ Does the pattern match this <mark>text</mark>?
 <p>Sometime's it's useful to match part of the text without being
 explicit about it. The dot matches any character.</p>
 
-<p>This example looks for 4 characters a T followed by any 2
-characters followed by another T.</p>
+<p>This example looks for a T followed by any 2 characters followed by
+another T and matches a total of 4 characters.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Wildcards</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t.+t")
 ]]]-->
-<p><tt>t.+t</tt></p>
+<h2><tt>t.+t</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -315,18 +302,18 @@ Does <mark>the pattern match this text</mark>?
 <p>Repetition using + is "greedy" by default, and when that's combined
 with the dot wildcard it can result in matching more than
 expected.</p>
+
+<p><em>This is the most common error when working with regexes.</em></p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Non-greedy Repetition</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t.+?t")
 ]]]-->
-<p><tt>t.+?t</tt></p>
+<h2><tt>t.+?t</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -337,23 +324,18 @@ Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p>Dots can be combined with wildcards, too, but be careful!</p>
-
-<p>Repetition using + is "greedy" by default, and when that's combined
-with the dot wildcard it can result in matching more than
-expected.</p>
+<p>Adding a ? disables greedy mode.</p>
+<p>The results may still be surprising.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Repetition</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t.*t")
 ]]]-->
-<p><tt>t.*t</tt></p>
+<h2><tt>t.*t</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -372,12 +354,10 @@ Does <mark>the pattern match this text</mark>?
 
 
 <section>
-<h2>Non-greedy Repetition</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t.*?t")
 ]]]-->
-<p><tt>t.*?t</tt></p>
+<h2><tt>t.*?t</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -388,19 +368,17 @@ Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p>Adding a question mark gives us 3 matches again</p>
+<p>Adding a question mark gives us 3 matches again.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Character Sets</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t[aeiou]")
 ]]]-->
-<p><tt>t[aeiou]</tt></p>
+<h2><tt>t[aeiou]</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -411,20 +389,18 @@ Does the pat<mark>te</mark>rn match this <mark>te</mark>xt?
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p>The square brackets indicate a set of characters, any one of which
-can match.</p>
+<p>The square brackets define a "character set", any one of which can
+match in one position.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Exclusive Character Sets</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t[^aeiou]")
 ]]]-->
-<p><tt>t[^aeiou]</tt></p>
+<h2><tt>t[^aeiou]</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -436,19 +412,17 @@ Does <mark>th</mark>e pa<mark>tt</mark>ern ma<mark>tc</mark>h <mark>th</mark>is 
 
 <aside class="notes">
 <p>If the first entry in the character set is ^ (caret), then the set
-is negated and the match must not be a member.</p>
+is negated and the match must <em>not</em> be a member.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Character Ranges</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "t[a-zA-Z]")
 ]]]-->
-<p><tt>t[a-zA-Z]</tt></p>
+<h2><tt>t[a-zA-Z]</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -459,19 +433,17 @@ Does <mark>th</mark>e pa<mark>tt</mark>ern ma<mark>tc</mark>h <mark>th</mark>is 
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p>The character set can express a range using a dash between entries</p>
+<p>The character set can be defined using one or more ranges, using a dash between boundaries.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Character Classes: Digits</h2>
-
 <!--[[[cog
 showregex("Athens, 30605", r"\d{5}")
 ]]]-->
-<p><tt>\d{5}</tt></p>
+<h2><tt>\d{5}</tt></h2>
 <pre data-trim>
 Athens, 30605
 </pre>
@@ -491,12 +463,10 @@ this case, \d means a digit.</p>
 
 
 <section>
-<h2>Character Classes: Digits</h2>
-
 <!--[[[cog
 showregex("Athens, 30605", r"\D+")
 ]]]-->
-<p><tt>\D+</tt></p>
+<h2><tt>\D+</tt></h2>
 <pre data-trim>
 Athens, 30605
 </pre>
@@ -515,12 +485,10 @@ opposites. So backslash uppercase D means "not a digit".</p>
 
 
 <section>
-<h2>Character Classes: Whitespace</h2>
-
 <!--[[[cog
 showregex("Athens, 30605", r"\s+")
 ]]]-->
-<p><tt>\s+</tt></p>
+<h2><tt>\s+</tt></h2>
 <pre data-trim>
 Athens, 30605
 </pre>
@@ -538,12 +506,10 @@ Athens,<mark> </mark>30605
 
 
 <section>
-<h2>Character Classes: Whitespace</h2>
-
 <!--[[[cog
 showregex("Athens, 30605", r"\S+")
 ]]]-->
-<p><tt>\S+</tt></p>
+<h2><tt>\S+</tt></h2>
 <pre data-trim>
 Athens, 30605
 </pre>
@@ -560,12 +526,10 @@ Athens, 30605
 
 
 <section>
-<h2>Character Classes: Alphanumeric</h2>
-
 <!--[[[cog
 showregex("Athens, 30605", r"\w+")
 ]]]-->
-<p><tt>\w+</tt></p>
+<h2><tt>\w+</tt></h2>
 <pre data-trim>
 Athens, 30605
 </pre>
@@ -578,19 +542,18 @@ Athens, 30605
 <aside class="notes">
 <p>All of the pre-defined character classes are unicode and
 locale-aware, which is especially useful for alphanumeric.<p>
-<p>Note here that the comma and space are excluded.<p>
+<p>Note here that the comma and space are excluded because they are
+not alphanumeric.<p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Character Classes: Alphanumeric</h2>
-
 <!--[[[cog
 showregex("Athens, 30605", r"\W+")
 ]]]-->
-<p><tt>\W+</tt></p>
+<h2><tt>\W+</tt></h2>
 <pre data-trim>
 Athens, 30605
 </pre>
@@ -607,12 +570,10 @@ Athens<mark>, </mark>30605
 
 
 <section>
-<h2>Anchoring</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", "^t")
 ]]]-->
-<p><tt>^t</tt></p>
+<h2><tt>^t</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -632,12 +593,10 @@ appears at the start of the string or line.</p>
 
 
 <section>
-<h2>Anchoring</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", r"\?$")
 ]]]-->
-<p><tt>\?$</tt></p>
+<h2><tt>\?$</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -655,12 +614,10 @@ Does the pattern match this text<mark>?</mark>
 
 
 <section>
-<h2>Anchoring</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", r"\bt")
 ]]]-->
-<p><tt>\bt</tt></p>
+<h2><tt>\bt</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -678,12 +635,10 @@ Does <mark>t</mark>he pattern match <mark>t</mark>his <mark>t</mark>ext?
 
 
 <section>
-<h2>Anchoring</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", r"\Bt")
 ]]]-->
-<p><tt>\Bt</tt></p>
+<h2><tt>\Bt</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -701,12 +656,10 @@ Does the pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch this tex<mark>t</m
 
 
 <section>
-<h2>Grouping</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", r"\bt(\w+)t\W")
 ]]]-->
-<p><tt>\bt(\w+)t\W</tt></p>
+<h2><tt>\bt(\w+)t\W</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -730,12 +683,10 @@ the group only contains "ex".</p>
 
 
 <section>
-<h2>Grouping</h2>
-
 <!--[[[cog
 showregex("Does the pattern match this text?", r"\b(t\w{2}|t..t)\W")
 ]]]-->
-<p><tt>\b(t\w{2}|t..t)\W</tt></p>
+<h2><tt>\b(t\w{2}|t..t)\W</tt></h2>
 <pre data-trim>
 Does the pattern match this text?
 </pre>
@@ -759,8 +710,6 @@ words starting and ending with T.</p>
 
 
 <section>
-<h2>Parsing With Groups</h2>
-
 <!--[[[cog
 log_line = r'80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"'
 ip_address = r'((\d{1,3}\.){3}\d{1,3})'
@@ -770,7 +719,7 @@ response = r'(\d+)'
 all_parts = '^' + ip_address + r'.*' + date + '[^"]*' + request + r'\s+' + response
 showregex(log_line, ip_address)
 ]]]-->
-<p><tt>((\d{1,3}\.){3}\d{1,3})</tt></p>
+<h2><tt>((\d{1,3}\.){3}\d{1,3})</tt></h2>
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
@@ -784,19 +733,19 @@ showregex(log_line, ip_address)
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p></p>
+<p>Let's look at a more realistic example of parsing a log line and see how groups make that possible.</p>
+<p>This patterns matches the IP address in the log line.</p>
+<p>Groups can be nested and combined with the repeat operators.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Parsing With Groups</h2>
-
 <!--[[[cog
 showregex(log_line, date)
 ]]]-->
-<p><tt>\[([^]]+)\]</tt></p>
+<h2><tt>\[([^]]+)\]</tt></h2>
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
@@ -809,19 +758,19 @@ showregex(log_line, date)
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p></p>
+<p>The date appears between square brackets, and we have to escape the
+brackets to avoid having them look like we are defining a character
+class.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Parsing With Groups</h2>
-
 <!--[[[cog
 showregex(log_line, request)
 ]]]-->
-<p><tt>"((\w+) ([^"]*) HTTP/[^"]+)"</tt></p>
+<h2><tt>"((\w+) ([^"]*) HTTP/[^"]+)"</tt></h2>
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
@@ -836,19 +785,19 @@ showregex(log_line, request)
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p></p>
+<p>The incoming web request appears between quotes and is made up of
+three parts. We're interested in the request method (Get or Put) and
+the path for the URL.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>Parsing With Groups</h2>
-
 <!--[[[cog
 showregex(log_line, all_parts)
 ]]]-->
-<p><tt>^((\d{1,3}\.){3}\d{1,3}).*\[([^]]+)\][^"]*"((\w+) ([^"]*) HTTP/[^"]+)"\s+(\d+)</tt></p>
+<h2><tt>^((\d{1,3}\.){3}\d{1,3}).*\[([^]]+)\][^"]*"((\w+) ([^"]*) HTTP/[^"]+)"\s+(\d+)</tt></h2>
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
@@ -867,35 +816,35 @@ showregex(log_line, all_parts)
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p></p>
+<p>If we put it all together, we can see that the pieces we want are
+in the groups.</p>
+<p>But ew, that expression is a real brain twister.</p>
 </aside>
 </section>
 
 
 
 <section>
-<h2>re.VERBOSE</h2>
-
 <!--[[[cog
 verbose = r'''^
-{ip_address}  # <mark>IP Address</mark>
+{ip_address}  # IP Address
 .*
-{date}  # <mark>Date</mark>
+{date}  # Date
 [^"]*
-{request}  # <mark>Request</mark>
+{request}  # Request
 \s+
-{response}  # <mark>Response code</mark>'''.format(**(locals()))
+{response}  # Response code'''.format(**(locals()))
 showregex(log_line, verbose, re.VERBOSE)
 ]]]-->
 <pre data-trim>
 ^
-((\d{1,3}\.){3}\d{1,3})  # <mark>IP Address</mark>
+((\d{1,3}\.){3}\d{1,3})  # IP Address
 .*
-\[([^]]+)\]  # <mark>Date</mark>
+\[([^]]+)\]  # Date
 [^"]*
-"((\w+) ([^"]*) HTTP/[^"]+)"  # <mark>Request</mark>
+"((\w+) ([^"]*) HTTP/[^"]+)"  # Request
 \s+
-(\d+)  # <mark>Response code</mark>
+(\d+)  # Response code
 </pre>
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
@@ -915,7 +864,9 @@ showregex(log_line, verbose, re.VERBOSE)
 <!--[[[end]]]-->
 
 <aside class="notes">
-<p></p>
+<p>We can get around that by using <em>verbose</em> mode.</p>
+<p>Supports multi-line strings where whitespace is ignored.</p>
+<p>Supports comments</p>
 </aside>
 </section>
 

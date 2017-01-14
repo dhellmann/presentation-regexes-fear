@@ -11,9 +11,8 @@ def showregex(s, p, flags=0):
         print(p)
         print('</pre>')
     else:
-        print('<p><tt>{}</tt></p>'.format(p))
+        print('<h2><tt>{}</tt></h2>'.format(p))
     print('<pre data-trim>')
-    #print('{}\n\n{}'.format(s, p))
     print(s)
     print('</pre>\n')
     print('<pre data-trim class="fragment fade-in">')
