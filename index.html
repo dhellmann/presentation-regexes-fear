@@ -677,6 +677,25 @@ Does <mark>t</mark>he pattern match <mark>t</mark>his <mark>t</mark>ext?
 
 
 <section>
+<h2>Anchoring</h2>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", r"\Bt")
+]]]-->
+<p><tt>\Bt</tt></p>
+<pre data-trim>
+Does the pattern match this text?
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Does the pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch this tex<mark>t</mark>?
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>The uppercase B matches anywhere other than the beginning of a word.</p>
+</aside>
+</section>
 <small>
   <a href="https://github.com/dhellmann/presentation-regexes-fear">http://github.com/dhellmann/presentation-regexes-fear</a><br/>
   <a href="https://pymotw.com/3/re/">https://pymotw.com/3/re</a>
