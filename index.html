@@ -1,3 +1,9 @@
+<!--[[[cog
+from regexesfear import showregex
+from showcode import showcode, runscript
+]]]-->
+<!--[[[end]]]-->
+
 <!doctype html>
 <html>
 	<head>
@@ -62,7 +68,6 @@ t
 </pre>
 
 <!--[[[cog
-from regexesfear import showregex
 showregex("Does the pattern match this text?", "t")
 ]]]-->
 <pre data-trim class="fragment fade-in">
@@ -73,7 +78,6 @@ Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark
 <section>
   <h2>Using <tt>re</tt> from Python</h2>
 <!--[[[cog
-from showcode import showcode, runscript
 showcode('ex1.py')
 runscript('ex1.py', fade_in=True)
 ]]]-->
