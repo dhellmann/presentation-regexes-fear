@@ -577,6 +577,55 @@ Athens, 30605
 
 
 <section>
+<h2>Character Classes: Alphanumeric</h2>
+
+<!--[[[cog
+showregex("Athens, 30605", "\w+")
+]]]-->
+<pre data-trim>
+Athens, 30605
+
+\w+
+</pre>
+
+<pre data-trim class="fragment fade-in">
+<mark>Athens</mark>, <mark>30605</mark>
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>All of the pre-defined character classes are unicode and
+locale-aware, which is especially useful for alphanumeric.<p>
+<p>Note here that the comma and space are excluded.<p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Character Classes: Alphanumeric</h2>
+
+<!--[[[cog
+showregex("Athens, 30605", "\W+")
+]]]-->
+<pre data-trim>
+Athens, 30605
+
+\W+
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Athens<mark>, </mark>30605
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+</aside>
+</section>
+
+
+
+<section>
 <small>
   <a href="https://github.com/dhellmann/presentation-regexes-fear">http://github.com/dhellmann/presentation-regexes-fear</a><br/>
   <a href="https://pymotw.com/3/re/">https://pymotw.com/3/re</a>
