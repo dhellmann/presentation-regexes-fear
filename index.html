@@ -76,15 +76,15 @@ from showcode import showcode, runscript
 <section>
   <h2>Simple Example Expression</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "t")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 t
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "t")
-]]]-->
 <pre data-trim class="fragment fade-in">
 Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
 </pre>
@@ -139,15 +139,15 @@ the language syntax.</p>
 <section>
 <h2>Multi-part Expressions</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "this")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 this
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "this")
-]]]-->
 <pre data-trim class="fragment fade-in">
 Does the pattern match <mark>this</mark> text?
 </pre>
@@ -170,15 +170,15 @@ that will be clear as the patterns get more complicated.</p>
 <section>
 <h2>Repetition</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "tt")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 tt
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "tt")
-]]]-->
 <pre data-trim class="fragment fade-in">
 Does the pa<mark>tt</mark>ern match this text?
 </pre>
@@ -198,15 +198,15 @@ expression language supports repetition rules directly, though.</p>
 <section>
 <h2>Repetition</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "t{2}")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 t{2}
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "t{2}")
-]]]-->
 <pre data-trim class="fragment fade-in">
 Does the pa<mark>tt</mark>ern match this text?
 </pre>
@@ -224,15 +224,15 @@ Does the pa<mark>tt</mark>ern match this text?
 <section>
 <h2>Repetition</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "t{2,3}")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 t{2,3}
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "t{2,3}")
-]]]-->
 <pre data-trim class="fragment fade-in">
 Does the pa<mark>tt</mark>ern match this text?
 </pre>
@@ -248,15 +248,15 @@ Does the pa<mark>tt</mark>ern match this text?
 <section>
 <h2>Repetition</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "t+")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 t+
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "t+")
-]]]-->
 <pre data-trim class="fragment fade-in">
 Does <mark>t</mark>he pa<mark>tt</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
 </pre>
@@ -274,15 +274,15 @@ pair of Ts in "pattern" are matched as one instance.</p>
 <section>
 <h2>Wildcards</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "t..t")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 t..t
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "t..t")
-]]]-->
 <pre data-trim class="fragment fade-in">
 Does the pattern match this <mark>text</mark>?
 </pre>
@@ -302,15 +302,15 @@ characters followed by another T.</p>
 <section>
 <h2>Wildcards</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "t.+t")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 t.+t
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "t.+t")
-]]]-->
 <pre data-trim class="fragment fade-in">
 Does <mark>the pattern match this text</mark>?
 </pre>
@@ -330,17 +330,17 @@ expected.</p>
 <section>
 <h2>Non-greedy Repetition</h2>
 
-<pre>
+<!--[[[cog
+showregex("Does the pattern match this text?", "t.+?t")
+]]]-->
+<pre data-trim>
 Does the pattern match this text?
 
 t.+?t
 </pre>
 
-<!--[[[cog
-showregex("Does the pattern match this text?", "t.+t?")
-]]]-->
 <pre data-trim class="fragment fade-in">
-Does <mark>the pattern match this text</mark>?
+Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
 </pre>
 <!--[[[end]]]-->
 
