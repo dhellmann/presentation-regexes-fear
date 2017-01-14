@@ -35,7 +35,11 @@ def showregex(s, p, flags=0):
         print()
 
         for i, m in enumerate(pat.finditer(s), 1):
-            if m.groups():
+            if m.groupdict():
+                print()
+                for n, v in sorted(m.groupdict().items()):
+                    print('{:<10s}: {}'.format(n, v))
+            elif m.groups():
                 print()
                 for j, g in enumerate(m.groups(), 1):
                     print('({}, {}) {}'.format(i, j, g))

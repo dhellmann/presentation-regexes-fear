@@ -871,6 +871,55 @@ showregex(log_line, verbose, re.VERBOSE)
 </section>
 
 
+
+<section>
+<!--[[[cog
+verbose = r'''^
+(?P<ip>(\d{1,3}\.){3}\d{1,3})
+.*
+\[(?P<date>[^]]+)\]
+[^"]*
+"((?P<method>\w+) (?P<path>[^"]*) HTTP/[^"]+)"
+\s+
+(?P<response>\d+)'''
+showregex(log_line, verbose, re.VERBOSE)
+]]]-->
+
+<pre data-trim style="font-size: 80%">
+^
+(?P&lt;ip>(\d{1,3}\.){3}\d{1,3})
+.*
+\[(?P&lt;date>[^]]+)\]
+[^"]*
+"((?P&lt;method>\w+) (?P&lt;path>[^"]*) HTTP/[^"]+)"
+\s+
+(?P&lt;response>\d+)
+</pre>
+
+<pre data-trim>
+80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+</pre>
+
+<pre data-trim data-noescape class="fragment fade-in">
+<mark>80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200</mark> 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+
+
+date      : 14/Jan/2017:12:20:35 -0800
+ip        : 80.5.216.116
+method    : GET
+path      :  /3/re/index.html 
+response  : 200
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>We can get around that by using <em>verbose</em> mode.</p>
+<p>Supports multi-line strings where whitespace is ignored.</p>
+<p>Supports comments</p>
+</aside>
+</section>
+
+
 <section>
 <small>
   <a href="https://github.com/dhellmann/presentation-regexes-fear">http://github.com/dhellmann/presentation-regexes-fear</a><br/>
