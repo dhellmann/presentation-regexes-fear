@@ -696,6 +696,39 @@ Does the pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch this tex<mark>t</m
 <p>The uppercase B matches anywhere other than the beginning of a word.</p>
 </aside>
 </section>
+
+
+
+<section>
+<h2>Grouping</h2>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", r"\bt(\w+)t\W")
+]]]-->
+<p><tt>\bt(\w+)t\W</tt></p>
+<pre data-trim>
+Does the pattern match this text?
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Does the pattern match this <mark>text?</mark>
+
+ 0 ex
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>Parentheses define groups or sub-patterns. This expression looks
+for the characters between Ts at the start and end of a word.</p>
+
+<p>The entire pattern matches "text?" at the end of the string, but
+the group only contains "ex".<p>
+</aside>
+</section>
+
+
+
+<section>
 <small>
   <a href="https://github.com/dhellmann/presentation-regexes-fear">http://github.com/dhellmann/presentation-regexes-fear</a><br/>
   <a href="https://pymotw.com/3/re/">https://pymotw.com/3/re</a>
