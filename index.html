@@ -652,6 +652,30 @@ appears at the start of the string or line.</p>
 
 
 <section>
+<h2>Anchoring</h2>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "\?$")
+]]]-->
+<pre data-trim>
+Does the pattern match this text?
+
+\?$
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Does the pattern match this text<mark>?</mark>
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>A dollar sign means anchor to the end of the string.</p>
+</aside>
+</section>
+
+
+
+<section>
 <small>
   <a href="https://github.com/dhellmann/presentation-regexes-fear">http://github.com/dhellmann/presentation-regexes-fear</a><br/>
   <a href="https://pymotw.com/3/re/">https://pymotw.com/3/re</a>
