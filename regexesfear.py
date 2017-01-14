@@ -5,15 +5,20 @@ from output import capture
 
 
 @capture
-def showregex(s, p):
-    print('<p><tt>{}</tt></p>'.format(p))
+def showregex(s, p, flags=0):
+    if flags & re.VERBOSE:
+        print('<pre data-trim>')
+        print(p)
+        print('</pre>')
+    else:
+        print('<p><tt>{}</tt></p>'.format(p))
     print('<pre data-trim>')
     #print('{}\n\n{}'.format(s, p))
     print(s)
     print('</pre>\n')
     print('<pre data-trim class="fragment fade-in">')
 
-    pat = re.compile(p)
+    pat = re.compile(p, flags)
 
     if not pat.search(s):
         print('(no match)')
