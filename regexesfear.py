@@ -32,7 +32,7 @@ def showregex(s, p):
 
         if m.groups():
             print()
-            for i, g in enumerate(m.groups()):
+            for i, g in enumerate(m.groups(), 1):
                 print('{:2d} {}'.format(i, g))
 
         # Show the numbers of each match.
