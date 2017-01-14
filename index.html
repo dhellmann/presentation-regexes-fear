@@ -626,6 +626,32 @@ Athens<mark>, </mark>30605
 
 
 <section>
+<h2>Anchoring</h2>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "^t")
+]]]-->
+<pre data-trim>
+Does the pattern match this text?
+
+^t
+</pre>
+
+<pre data-trim class="fragment fade-in">
+(no match)
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>Within a pattern, caret means to anchor the search to the start of
+the string. The remainder of the expression will only match if it
+appears at the start of the string or line.</p>
+</aside>
+</section>
+
+
+
+<section>
 <small>
   <a href="https://github.com/dhellmann/presentation-regexes-fear">http://github.com/dhellmann/presentation-regexes-fear</a><br/>
   <a href="https://pymotw.com/3/re/">https://pymotw.com/3/re</a>
