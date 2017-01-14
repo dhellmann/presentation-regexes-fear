@@ -5,5 +5,12 @@
 This repository contains the source files for a presentation about
 regular expressions.
 
-requirements.txt -- Contains some Python dependencies for updating the
-presentation.
+To run the presentation::
+
+  $ npm install
+  $ npm start
+
+To update the presentation::
+
+  $ pip install -r requirements.txt
+  $ cog.py -r index.html
