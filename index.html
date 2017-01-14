@@ -468,7 +468,7 @@ Does <mark>th</mark>e pa<mark>tt</mark>ern ma<mark>tc</mark>h <mark>th</mark>is 
 <h2>Character Classes: Digits</h2>
 
 <!--[[[cog
-showregex("Athens, 30605", "\d{5}")
+showregex("Athens, 30605", r"\d{5}")
 ]]]-->
 <p><tt>\d{5}</tt></p>
 <pre data-trim>
@@ -493,7 +493,7 @@ this case, \d means a digit.</p>
 <h2>Character Classes: Digits</h2>
 
 <!--[[[cog
-showregex("Athens, 30605", "\D+")
+showregex("Athens, 30605", r"\D+")
 ]]]-->
 <p><tt>\D+</tt></p>
 <pre data-trim>
@@ -517,7 +517,7 @@ opposites. So backslash uppercase D means "not a digit".</p>
 <h2>Character Classes: Whitespace</h2>
 
 <!--[[[cog
-showregex("Athens, 30605", "\s+")
+showregex("Athens, 30605", r"\s+")
 ]]]-->
 <p><tt>\s+</tt></p>
 <pre data-trim>
@@ -540,7 +540,7 @@ Athens,<mark> </mark>30605
 <h2>Character Classes: Whitespace</h2>
 
 <!--[[[cog
-showregex("Athens, 30605", "\S+")
+showregex("Athens, 30605", r"\S+")
 ]]]-->
 <p><tt>\S+</tt></p>
 <pre data-trim>
@@ -562,7 +562,7 @@ Athens, 30605
 <h2>Character Classes: Alphanumeric</h2>
 
 <!--[[[cog
-showregex("Athens, 30605", "\w+")
+showregex("Athens, 30605", r"\w+")
 ]]]-->
 <p><tt>\w+</tt></p>
 <pre data-trim>
@@ -587,7 +587,7 @@ locale-aware, which is especially useful for alphanumeric.<p>
 <h2>Character Classes: Alphanumeric</h2>
 
 <!--[[[cog
-showregex("Athens, 30605", "\W+")
+showregex("Athens, 30605", r"\W+")
 ]]]-->
 <p><tt>\W+</tt></p>
 <pre data-trim>
@@ -634,7 +634,7 @@ appears at the start of the string or line.</p>
 <h2>Anchoring</h2>
 
 <!--[[[cog
-showregex("Does the pattern match this text?", "\?$")
+showregex("Does the pattern match this text?", r"\?$")
 ]]]-->
 <p><tt>\?$</tt></p>
 <pre data-trim>
@@ -648,6 +648,29 @@ Does the pattern match this text<mark>?</mark>
 
 <aside class="notes">
 <p>A dollar sign means anchor to the end of the string.</p>
+</aside>
+</section>
+
+
+
+<section>
+<h2>Anchoring</h2>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", r"\bt")
+]]]-->
+<p><tt>\bt</tt></p>
+<pre data-trim>
+Does the pattern match this text?
+</pre>
+
+<pre data-trim class="fragment fade-in">
+Does <mark>t</mark>he pattern match <mark>t</mark>his <mark>t</mark>ext?
+</pre>
+<!--[[[end]]]-->
+
+<aside class="notes">
+<p>The lowercase b matches the beginning of a word.</p>
 </aside>
 </section>
 
