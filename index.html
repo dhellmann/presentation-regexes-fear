@@ -61,24 +61,24 @@ Does the pattern match this text?
 t
 </pre>
 
-<pre class="fragment fade-in">
 <!--[[[cog
 from regexesfear import showregex
-cog.out(showregex("Does the pattern match this text?", "t"))
+showregex("Does the pattern match this text?", "t")
 ]]]-->
-Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
+<pre data-trim class="fragment fade-in">
+Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?</pre>
 <!--[[[end]]]-->
-</pre>
-                </section>
+</section>
 
-                <section>
-                  <h2>Using <tt>re</tt> from Python</h2>
+<section>
+  <h2>Using <tt>re</tt> from Python</h2>
 <!--[[[cog
 from showcode import showcode, runscript
 showcode('ex1.py')
 runscript('ex1.py', fade_in=True)
 ]]]-->
 <pre><code data-trim>
+
 import re
 
 s = "Does the pattern match this text?"
@@ -86,18 +86,40 @@ s = "Does the pattern match this text?"
 pattern = re.compile("t")
 
 print(pattern.search(s))
+
 </code></pre>
+
 <pre data-trim class="fragment fade-in">
 <_sre.SRE_Match object; span=(5, 6), match='t'>
+
 </pre>
+
 <!--[[[end]]]-->
-                </section>
+</section>
+
+<section>
+<h2>Multi-part Expressions</h2>
+
+<pre>
+Does the pattern match this text?
+
+this
+</pre>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "this")
+]]]-->
+<pre data-trim class="fragment fade-in">
+Does the pattern match <mark>this</mark> text?</pre>
+<!--[[[end]]]-->
+
+</section>
 
 			</div>
 		</div>
 
-		<script src="/lib/js/head.min.js"></script>
-		<script src="/js/reveal.js"></script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
