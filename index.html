@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Regular Expressions Are Nothing to Fear</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,13 +24,80 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+				<section>
+                  <h2>Regular Expressions Are Nothing to Fear</h2>
+                  <br/>
+                  <h3>Doug Hellmann</h3>
+                  <h4>PyATL, February 2017</h4>
+                </section>
+
+				<section>
+                  <h2>What are <br/><em>"Regular Expressions"</em><br/>?</h2>
+
+                  <p>Formal Language for Matching Patterns in Text</p>
+
+                  <aside class="notes">
+                    <em>blah blah blah</em>
+                  </aside>
+                </section>
+
+                <section>
+                  <h2>Their Uses</h2>
+
+                  <ul>
+                    <li>Finding</li>
+                    <li>Parsing</li>
+                    <li>Editing</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h2>Simple Example Expression</h2>
+
+<pre>
+Does the pattern match this text?
+
+t
+</pre>
+
+<pre class="fragment fade-in">
+<!--[[[cog
+from regexesfear import showregex
+cog.out(showregex("Does the pattern match this text?", "t"))
+]]]-->
+Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
+<!--[[[end]]]-->
+</pre>
+                </section>
+
+                <section>
+                  <h2>Using <tt>re</tt> from Python</h2>
+<!--[[[cog
+from showcode import showcode, runscript
+showcode('ex1.py')
+runscript('ex1.py', fade_in=True)
+]]]-->
+<pre><code data-trim>
+import re
+
+s = "Does the pattern match this text?"
+
+pattern = re.compile("t")
+
+print(pattern.search(s))
+</code></pre>
+<pre data-trim class="fragment fade-in">
+<_sre.SRE_Match object; span=(5, 6), match='t'>
+</pre>
+<!--[[[end]]]-->
+                </section>
+
 			</div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="/lib/js/head.min.js"></script>
+		<script src="/js/reveal.js"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -42,7 +109,8 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js',
+                      async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
 		</script>
