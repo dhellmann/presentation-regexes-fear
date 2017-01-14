@@ -31,12 +31,15 @@ from showcode import showcode, runscript
 		<div class="reveal">
 			<div class="slides">
 
+
 <section>
   <h2>Regular Expressions Are Nothing to Fear</h2>
   <br/>
   <h3>Doug Hellmann</h3>
   <h4>PyATL, February 2017</h4>
 </section>
+
+
 
 <section>
   <h2>What are <br/><em>"Regular Expressions"</em><br/>?</h2>
@@ -48,6 +51,8 @@ from showcode import showcode, runscript
   </aside>
 </section>
 
+
+
 <section>
   <h2>Their Uses</h2>
 
@@ -56,7 +61,17 @@ from showcode import showcode, runscript
     <li>Parsing</li>
     <li>Editing</li>
   </ul>
+
+<aside class="notes">
+<ul>
+<li>Finding function definitions in a file or lines in a log file.</li>
+<li>Parsing data files.</li>
+<li>Search and replace using a text editor.</li>
+</aside>
+
 </section>
+
+
 
 <section>
   <h2>Simple Example Expression</h2>
@@ -71,9 +86,18 @@ t
 showregex("Does the pattern match this text?", "t")
 ]]]-->
 <pre data-trim class="fragment fade-in">
-Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?</pre>
+Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
+</pre>
 <!--[[[end]]]-->
+
+<aside class="notes">
+The simplest pattern is a single character, such as this T.
+
+It would match 7 times in the input text.
+</aside>
 </section>
+
+
 
 <section>
   <h2>Using <tt>re</tt> from Python</h2>
@@ -93,13 +117,24 @@ print(pattern.search(s))
 
 </code></pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 <_sre.SRE_Match object; span=(5, 6), match='t'>
 
 </pre>
 
 <!--[[[end]]]-->
+
+<aside class="notes">
+<p>The search() method looks for a pattern in the input string and
+returns a Match object with details about where it is found, or None
+if it is not.</p>
+
+<p>We'll talk more about Match objects, but for now I want to focus on
+the language syntax.</p>
+</aside>
 </section>
+
+
 
 <section>
 <h2>Multi-part Expressions</h2>
@@ -114,10 +149,103 @@ this
 showregex("Does the pattern match this text?", "this")
 ]]]-->
 <pre data-trim class="fragment fade-in">
-Does the pattern match <mark>this</mark> text?</pre>
+Does the pattern match <mark>this</mark> text?
+</pre>
 <!--[[[end]]]-->
 
+<aside class="notes">
+<p>A single letter is obviously not that useful. The expression syntax
+supports multiple parts.</p>
+
+<p>This pattern matches the 4 literal characters in the word "this",
+and is processed by matching the T then H then I then S</p>
+
+<p>Each letter is actually a "subexpression", and the usefulness of
+that will be clear as the patterns get more complicated.</p>
+</aside>
 </section>
+
+
+
+<section>
+<h2>Repetition</h2>
+
+<pre>
+Does the pattern match this text?
+
+tt
+</pre>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "tt")
+]]]-->
+<pre data-trim class="fragment fade-in">
+Does the pa<mark>tt</mark>ern match this text?
+</pre>
+<!--[[[end]]]-->
+</section>
+
+
+
+<section>
+<h2>Repetition</h2>
+
+<pre>
+Does the pattern match this text?
+
+t{2}
+</pre>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "t{2}")
+]]]-->
+<pre data-trim class="fragment fade-in">
+Does the pa<mark>tt</mark>ern match this text?
+</pre>
+<!--[[[end]]]-->
+</section>
+
+
+
+<section>
+<h2>Repetition</h2>
+
+<pre>
+Does the pattern match this text?
+
+t{2,3}
+</pre>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "t{2,3}")
+]]]-->
+<pre data-trim class="fragment fade-in">
+Does the pa<mark>tt</mark>ern match this text?
+</pre>
+<!--[[[end]]]-->
+</section>
+
+
+
+<section>
+<h2>Repetition</h2>
+
+<pre>
+Does the pattern match this text?
+
+t+
+</pre>
+
+<!--[[[cog
+showregex("Does the pattern match this text?", "t+")
+]]]-->
+<pre data-trim class="fragment fade-in">
+Does <mark>t</mark>he pa<mark>tt</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
+</pre>
+<!--[[[end]]]-->
+</section>
+
+
 
 			</div>
 		</div>

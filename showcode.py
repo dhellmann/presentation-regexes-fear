@@ -13,7 +13,7 @@ def showcode(filename, extras='data-trim'):
 
 
 @capture
-def runscript(filename, extras='data-trim', fade_in=False):
+def runscript(filename, extras='data-trim data-noescape', fade_in=False):
     print('<pre {}'.format(extras), end='')
     if fade_in:
         print(' class="fragment fade-in"', end='')
@@ -22,5 +22,5 @@ def runscript(filename, extras='data-trim', fade_in=False):
         ['python3', filename],
         stdout=subprocess.PIPE,
     )
-    print(result.stdout.decode('utf-8'))
-    print('</pre>\n')
+    print(result.stdout.decode('utf-8').rstrip('\n'))
+    print('\n</pre>\n')
