@@ -82,12 +82,14 @@ import re
 showregex("Does the pattern match this text?", "t")
 ]]]-->
 <h2><tt>t</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>t</mark>he pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -142,12 +144,14 @@ the language syntax.</p>
 showregex("Does the pattern match this text?", "this")
 ]]]-->
 <h2><tt>this</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pattern match <mark>this</mark> text?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -170,12 +174,14 @@ that will be clear as the patterns get more complicated.</p>
 showregex("Does the pattern match this text?", "tt")
 ]]]-->
 <h2><tt>tt</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pa<mark>tt</mark>ern match this text?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -195,12 +201,14 @@ expression language supports repetition rules directly, though.</p>
 showregex("Does the pattern match this text?", "t{2}")
 ]]]-->
 <h2><tt>t{2}</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pa<mark>tt</mark>ern match this text?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -218,12 +226,14 @@ Does the pa<mark>tt</mark>ern match this text?
 showregex("Does the pattern match this text?", "t{2,3}")
 ]]]-->
 <h2><tt>t{2,3}</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pa<mark>tt</mark>ern match this text?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -239,12 +249,14 @@ Does the pa<mark>tt</mark>ern match this text?
 showregex("Does the pattern match this text?", "t+")
 ]]]-->
 <h2><tt>t+</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>t</mark>he pa<mark>tt</mark>ern ma<mark>t</mark>ch <mark>t</mark>his <mark>t</mark>ex<mark>t</mark>?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -262,12 +274,14 @@ pair of Ts in "pattern" are matched as one instance.</p>
 showregex("Does the pattern match this text?", "t..t")
 ]]]-->
 <h2><tt>t..t</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pattern match this <mark>text</mark>?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -287,12 +301,14 @@ another T and matches a total of 4 characters.</p>
 showregex("Does the pattern match this text?", "t.+t")
 ]]]-->
 <h2><tt>t.+t</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>the pattern match this text</mark>?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -314,12 +330,14 @@ expected.</p>
 showregex("Does the pattern match this text?", "t.+?t")
 ]]]-->
 <h2><tt>t.+?t</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -336,12 +354,14 @@ Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
 showregex("Does the pattern match this text?", "t.*t")
 ]]]-->
 <h2><tt>t.*t</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>the pattern match this text</mark>?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -358,12 +378,14 @@ Does <mark>the pattern match this text</mark>?
 showregex("Does the pattern match this text?", "t.*?t")
 ]]]-->
 <h2><tt>t.*?t</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -379,12 +401,14 @@ Does <mark>the pat</mark><mark>tern mat</mark>ch <mark>this t</mark>ext?
 showregex("Does the pattern match this text?", "t[aeiou]")
 ]]]-->
 <h2><tt>t[aeiou]</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pat<mark>te</mark>rn match this <mark>te</mark>xt?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -401,12 +425,14 @@ match in one position.</p>
 showregex("Does the pattern match this text?", "t[^aeiou]")
 ]]]-->
 <h2><tt>t[^aeiou]</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>th</mark>e pa<mark>tt</mark>ern ma<mark>tc</mark>h <mark>th</mark>is tex<mark>t?</mark>
+
 </pre>
 <!--[[[end]]]-->
 
@@ -423,12 +449,14 @@ is negated and the match must <em>not</em> be a member.</p>
 showregex("Does the pattern match this text?", "t[a-zA-Z]")
 ]]]-->
 <h2><tt>t[a-zA-Z]</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>th</mark>e pa<mark>tt</mark>ern ma<mark>tc</mark>h <mark>th</mark>is <mark>te</mark>xt?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -444,12 +472,14 @@ Does <mark>th</mark>e pa<mark>tt</mark>ern ma<mark>tc</mark>h <mark>th</mark>is 
 showregex("Athens, 30605", r"\d{5}")
 ]]]-->
 <h2><tt>\d{5}</tt></h2>
+
 <pre data-trim>
 Athens, 30605
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Athens, <mark>30605</mark>
+
 </pre>
 <!--[[[end]]]-->
 
@@ -467,12 +497,14 @@ this case, \d means a digit.</p>
 showregex("Athens, 30605", r"\D+")
 ]]]-->
 <h2><tt>\D+</tt></h2>
+
 <pre data-trim>
 Athens, 30605
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 <mark>Athens, </mark>30605
+
 </pre>
 <!--[[[end]]]-->
 
@@ -489,12 +521,14 @@ opposites. So backslash uppercase D means "not a digit".</p>
 showregex("Athens, 30605", r"\s+")
 ]]]-->
 <h2><tt>\s+</tt></h2>
+
 <pre data-trim>
 Athens, 30605
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Athens,<mark> </mark>30605
+
 </pre>
 <!--[[[end]]]-->
 
@@ -510,12 +544,14 @@ Athens,<mark> </mark>30605
 showregex("Athens, 30605", r"\S+")
 ]]]-->
 <h2><tt>\S+</tt></h2>
+
 <pre data-trim>
 Athens, 30605
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 <mark>Athens,</mark> <mark>30605</mark>
+
 </pre>
 <!--[[[end]]]-->
 
@@ -530,12 +566,14 @@ Athens, 30605
 showregex("Athens, 30605", r"\w+")
 ]]]-->
 <h2><tt>\w+</tt></h2>
+
 <pre data-trim>
 Athens, 30605
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 <mark>Athens</mark>, <mark>30605</mark>
+
 </pre>
 <!--[[[end]]]-->
 
@@ -554,12 +592,14 @@ not alphanumeric.<p>
 showregex("Athens, 30605", r"\W+")
 ]]]-->
 <h2><tt>\W+</tt></h2>
+
 <pre data-trim>
 Athens, 30605
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Athens<mark>, </mark>30605
+
 </pre>
 <!--[[[end]]]-->
 
@@ -574,11 +614,12 @@ Athens<mark>, </mark>30605
 showregex("Does the pattern match this text?", "^t")
 ]]]-->
 <h2><tt>^t</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 (no match)
 </pre>
 <!--[[[end]]]-->
@@ -597,12 +638,14 @@ appears at the start of the string or line.</p>
 showregex("Does the pattern match this text?", r"\?$")
 ]]]-->
 <h2><tt>\?$</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pattern match this text<mark>?</mark>
+
 </pre>
 <!--[[[end]]]-->
 
@@ -618,12 +661,14 @@ Does the pattern match this text<mark>?</mark>
 showregex("Does the pattern match this text?", r"\bt")
 ]]]-->
 <h2><tt>\bt</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>t</mark>he pattern match <mark>t</mark>his <mark>t</mark>ext?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -639,12 +684,14 @@ Does <mark>t</mark>he pattern match <mark>t</mark>his <mark>t</mark>ext?
 showregex("Does the pattern match this text?", r"\Bt")
 ]]]-->
 <h2><tt>\Bt</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch this tex<mark>t</mark>?
+
 </pre>
 <!--[[[end]]]-->
 
@@ -660,12 +707,14 @@ Does the pa<mark>t</mark><mark>t</mark>ern ma<mark>t</mark>ch this tex<mark>t</m
 showregex("Does the pattern match this text?", r"\bt(\w+)t\W")
 ]]]-->
 <h2><tt>\bt(\w+)t\W</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does the pattern match this <mark>text?</mark>
+
 
 (1, 1) ex
 </pre>
@@ -687,12 +736,14 @@ the group only contains "ex".</p>
 showregex("Does the pattern match this text?", r"\b(t\w{2}|t..t)\W")
 ]]]-->
 <h2><tt>\b(t\w{2}|t..t)\W</tt></h2>
+
 <pre data-trim>
 Does the pattern match this text?
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 Does <mark>the </mark>pattern match this <mark>text?</mark>
+
 
 (1, 1) the
 
@@ -720,12 +771,14 @@ all_parts = '^' + ip_address + r'.*' + date + '[^"]*' + request + r'\s+' + respo
 showregex(log_line, ip_address)
 ]]]-->
 <h2><tt>((\d{1,3}\.){3}\d{1,3})</tt></h2>
+
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 <mark>80.5.216.116</mark> - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+
 
 (1, 1) 80.5.216.116
 (1, 2) 216.
@@ -746,12 +799,14 @@ showregex(log_line, ip_address)
 showregex(log_line, date)
 ]]]-->
 <h2><tt>\[([^]]+)\]</tt></h2>
+
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 80.5.216.116 - - <mark>[14/Jan/2017:12:20:35 -0800]</mark> "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+
 
 (1, 1) 14/Jan/2017:12:20:35 -0800
 </pre>
@@ -771,12 +826,14 @@ class.</p>
 showregex(log_line, request)
 ]]]-->
 <h2><tt>"((\w+) ([^"]*) HTTP/[^"]+)"</tt></h2>
+
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] <mark>"GET /3/re/index.html HTTP/1.1"</mark> 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+
 
 (1, 1) GET /3/re/index.html HTTP/1.1
 (1, 2) GET
@@ -798,12 +855,14 @@ the path for the URL.</p>
 showregex(log_line, all_parts)
 ]]]-->
 <h2><tt>^((\d{1,3}\.){3}\d{1,3}).*\[([^]]+)\][^"]*"((\w+) ([^"]*) HTTP/[^"]+)"\s+(\d+)</tt></h2>
+
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 <mark>80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200</mark> 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+
 
 (1, 1) 80.5.216.116
 (1, 2) 216.
@@ -836,7 +895,8 @@ verbose = r'''^
 {response}  # Response code'''.format(**(locals()))
 showregex(log_line, verbose, re.VERBOSE)
 ]]]-->
-<pre data-trim>
+
+<pre data-trim style="font-size: 80%">
 ^
 ((\d{1,3}\.){3}\d{1,3})  # IP Address
 .*
@@ -846,12 +906,14 @@ showregex(log_line, verbose, re.VERBOSE)
 \s+
 (\d+)  # Response code
 </pre>
+
 <pre data-trim>
 80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
 </pre>
 
-<pre data-trim class="fragment fade-in">
+<pre data-trim data-noescape class="fragment fade-in">
 <mark>80.5.216.116 - - [14/Jan/2017:12:20:35 -0800] "GET /3/re/index.html HTTP/1.1" 200</mark> 180340 "https://pymotw.com/3/index.html" "Mozilla/5.0 (X11; Linux x86_64; rv:50.0) Gecko/20100101 Firefox/50.0"
+
 
 (1, 1) 80.5.216.116
 (1, 2) 216.

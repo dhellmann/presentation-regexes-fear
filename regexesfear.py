@@ -7,15 +7,17 @@ from output import capture
 @capture
 def showregex(s, p, flags=0):
     if flags & re.VERBOSE:
-        print('<pre data-trim>')
-        print(p)
+        print('\n<pre data-trim style="font-size: 80%">')
+        print(p.replace('<', '&lt;'))
         print('</pre>')
     else:
         print('<h2><tt>{}</tt></h2>'.format(p))
-    print('<pre data-trim>')
+
+    print('\n<pre data-trim>')
     print(s)
-    print('</pre>\n')
-    print('<pre data-trim class="fragment fade-in">')
+    print('</pre>')
+
+    print('\n<pre data-trim data-noescape class="fragment fade-in">')
 
     pat = re.compile(p, flags)
 
@@ -32,7 +34,7 @@ def showregex(s, p, flags=0):
             last = m.end()
         if last:
             print(s[last:], end='')
-        print()
+        print('\n')
 
         for i, m in enumerate(pat.finditer(s), 1):
             if m.groupdict():
