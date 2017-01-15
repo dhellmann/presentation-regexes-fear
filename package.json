@@ -24,6 +24,7 @@
   "dependencies": {
     "express": "~4.14.0",
     "grunt-cli": "~1.2.0",
+    "grunt-exec": "~1.0.0",
     "mustache": "~2.2.1",
     "socket.io": "^1.4.8"
   },

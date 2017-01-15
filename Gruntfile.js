@@ -177,5 +177,7 @@ module.exports = function(grunt) {
 	// Serve presentation locally
 	grunt.registerTask( 'serve', [ 'connect', 'watch' ] );
 
+	// Set up grunt-exec
+	grunt.loadNpmTasks('grunt-exec');
 
 };
