@@ -796,7 +796,8 @@ verbose = r'''^
 .*
 \[(?P<date>[^]]+)\]
 [^"]*
-"((?P<method>\w+)\s+(?P<path>[^"]*)\s+HTTP/[^"]+)"
+"((?P<method>\w+)\s+
+  (?P<path>[^"]*)\s+HTTP/[^"]+)"
 \s+
 (?P<response>\d+)'''
 showregex(log_line, verbose, re.VERBOSE)
@@ -808,7 +809,8 @@ showregex(log_line, verbose, re.VERBOSE)
 .*
 \[(?P&lt;date>[^]]+)\]
 [^"]*
-"((?P&lt;method>\w+)\s+(?P&lt;path>[^"]*)\s+HTTP/[^"]+)"
+"((?P&lt;method>\w+)\s+
+  (?P&lt;path>[^"]*)\s+HTTP/[^"]+)"
 \s+
 (?P&lt;response>\d+)
 </pre>
