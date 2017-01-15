@@ -140,6 +140,10 @@ module.exports = function(grunt) {
 			js: ['js/reveal.js', 'lib/js/*.js', 'plugin/**/*.js'],
 			node: ['.'],
 			options: {}
+		},
+
+		exec: {
+			publish: 'rsync -av --progress *.html css js lib plugin doughellmann.com:~/doughellmann.com/presentations/regexes-fear/'
 		}
 
 	});
