@@ -25,7 +25,8 @@ def showregex(s, p, flags=0):
     pat = re.compile(p, flags)
 
     if not pat.search(s):
-        print('(no match)')
+        print(s)
+        print('<span class="fragment fade-in">(no match)</span>')
     else:
         prev = 0
         last = 0
