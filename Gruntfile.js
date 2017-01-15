@@ -105,7 +105,7 @@ module.exports = function(grunt) {
 		},
 
 		zip: {
-			'reveal-js-presentation.zip': [
+			'regexes-fear.zip': [
 				'index.html',
 				'css/**',
 				'js/**',
