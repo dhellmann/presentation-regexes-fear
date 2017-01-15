@@ -143,8 +143,7 @@ body {
 .reveal .slides section .fragment.highlight-blue,
 .reveal .slides section .fragment.highlight-current-blue {
   opacity: 1;
-  visibility: inherit;
-  border: 3px solid transparent; }
+  visibility: inherit; }
 
 .reveal .slides section .fragment.highlight-red.visible {
   color: #ff2c2d; }
