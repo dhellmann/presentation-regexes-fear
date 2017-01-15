@@ -171,6 +171,7 @@ body {
 }
 
 .reveal .slides section .fragment.highlight-red,
+.reveal .slides section .fragment.highlight-yellow,
 .reveal .slides section .fragment.highlight-current-red,
 .reveal .slides section .fragment.highlight-green,
 .reveal .slides section .fragment.highlight-current-green,
@@ -178,6 +179,7 @@ body {
 .reveal .slides section .fragment.highlight-current-blue {
 	opacity: 1;
 	visibility: inherit;
+	border: 3px solid transparent; // dhellmann
 }
 	.reveal .slides section .fragment.highlight-red.visible {
 		color: #ff2c2d
@@ -187,6 +189,10 @@ body {
 	}
 	.reveal .slides section .fragment.highlight-blue.visible {
 		color: #1b91ff;
+	}
+	.reveal .slides section .fragment.highlight-yellow.visible { // dhellmann
+		background-color: yellow;
+		border: 3px solid black;
 	}
 
 .reveal .slides section .fragment.highlight-current-red.current-fragment {

@@ -13,11 +13,7 @@ def showregex(s, p, flags=0):
     else:
         print('<h2><tt>{}</tt></h2>'.format(p))
 
-    print('\n<pre data-trim>')
-    print(s)
-    print('</pre>')
-
-    print('\n<pre data-trim data-noescape class="fragment fade-in">')
+    print('\n<pre data-trim data-noescape>')
 
     pat = re.compile(p, flags)
 
@@ -30,21 +26,23 @@ def showregex(s, p, flags=0):
             if prev < m.start():
                 print(s[prev:m.start()], end='')
             prev = m.end()
-            print('<mark>{}</mark>'.format(s[m.start():m.end()]), end='')
+            print('<span class="fragment highlight-yellow" data-fragment-index="1">{}</span>'.format(s[m.start():m.end()]), end='')
             last = m.end()
         if last:
             print(s[last:], end='')
-        print('\n')
+        print()
 
         for i, m in enumerate(pat.finditer(s), 1):
             if m.groupdict():
-                print()
+                print('<span class="fragment fade-in" data-fragment-index="1">')
                 for n, v in sorted(m.groupdict().items()):
                     print('{:<10s}: {}'.format(n, v))
+                print('</span>')
             elif m.groups():
-                print()
+                print('<span class="fragment fade-in" data-fragment-index="1">')
                 for j, g in enumerate(m.groups(), 1):
                     print('({}, {}) {}'.format(i, j, g))
+                print('</span>')
 
         # Show the numbers of each match.
         # prev = 0

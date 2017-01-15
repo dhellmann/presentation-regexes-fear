@@ -136,13 +136,15 @@ body {
     visibility: inherit; }
 
 .reveal .slides section .fragment.highlight-red,
+.reveal .slides section .fragment.highlight-yellow,
 .reveal .slides section .fragment.highlight-current-red,
 .reveal .slides section .fragment.highlight-green,
 .reveal .slides section .fragment.highlight-current-green,
 .reveal .slides section .fragment.highlight-blue,
 .reveal .slides section .fragment.highlight-current-blue {
   opacity: 1;
-  visibility: inherit; }
+  visibility: inherit;
+  border: 3px solid transparent; }
 
 .reveal .slides section .fragment.highlight-red.visible {
   color: #ff2c2d; }
@@ -152,6 +154,10 @@ body {
 
 .reveal .slides section .fragment.highlight-blue.visible {
   color: #1b91ff; }
+
+.reveal .slides section .fragment.highlight-yellow.visible {
+  background-color: yellow;
+  border: 3px solid black; }
 
 .reveal .slides section .fragment.highlight-current-red.current-fragment {
   color: #ff2c2d; }
@@ -1166,7 +1172,6 @@ body {
 .reveal .overlay .viewport {
   position: absolute;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   top: 40px;
