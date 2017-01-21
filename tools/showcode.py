@@ -1,7 +1,7 @@
 import cog
 import subprocess
 
-from output import capture
+from tools.output import capture
 
 
 @capture

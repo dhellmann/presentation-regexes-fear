@@ -1,6 +1,6 @@
 import re
 
-from output import capture
+from tools.output import capture
 
 HIGHLIGHT = (
     '<span class="fragment highlight-yellow" '
