@@ -57,7 +57,12 @@ section.has-dark-background {
 		}
 	}
 
+	small {
+		font-size: 0.5em;
+	}
+
 	.slides section {
+
 		.fragment.highlight-yellow {
 			opacity: 1;
 			visibility: inherit;
