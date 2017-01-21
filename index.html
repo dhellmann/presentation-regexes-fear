@@ -863,6 +863,33 @@ for line in open('ex2.log', 'r', encoding='utf-8'):
 <!--[[[end]]]-->
 </section>
 
+<section>
+  <h2>Editing with <tt>re</tt></h2>
+<!--[[[cog
+showcode('ex3.py')
+runscript('ex3.py')
+]]]-->
+<pre><code data-trim data-noescape>
+
+import re
+
+bold = re.compile(r'\*{2}(.*?)\*{2}')
+
+text = 'Make this **bold**.  This **too**.'
+
+print('Text:', text)
+print('Bold:', bold.sub(r'&lt;b>\1&lt;/b>', text))
+</code></pre>
+
+<pre data-trim data-noescape>
+Text: Make this **bold**.  This **too**.
+Bold: Make this <b>bold</b>.  This <b>too</b>.
+
+</pre>
+
+<!--[[[end]]]-->
+</section>
+
 
 <section>
   <h2>Further Reading<h2>
