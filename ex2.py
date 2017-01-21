@@ -1,5 +1,4 @@
 import re
-import sys
 
 _pattern = re.compile('''
 ^
