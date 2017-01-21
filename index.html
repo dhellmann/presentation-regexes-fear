@@ -876,14 +876,15 @@ import re
 bold = re.compile(r'\*{2}(.*?)\*{2}')
 
 text = 'Make this **bold**.  This **too**.'
+html = bold.sub(r'&lt;b>\1&lt;/b>', text)
 
 print('Text:', text)
-print('Bold:', bold.sub(r'&lt;b>\1&lt;/b>', text))
+print('HTML:', html)
 </code></pre>
 
 <pre data-trim data-noescape>
 Text: Make this **bold**.  This **too**.
-Bold: Make this &lt;b>bold&lt;/b>.  This &lt;b>too&lt;/b>.
+HTML: Make this &lt;b>bold&lt;/b>.  This &lt;b>too&lt;/b>.
 
 </pre>
 
