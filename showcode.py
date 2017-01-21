@@ -29,5 +29,7 @@ def runscript(filename, *args, extras='data-trim data-noescape', fade_in=False):
         ['python3', filename] + list(args),
         stdout=subprocess.PIPE,
     )
-    print(result.stdout.decode('utf-8').rstrip('\n'))
+    output = result.stdout.decode('utf-8').rstrip('\n')
+    output = output.replace('<', '&lt;')
+    print(output)
     print('\n</pre>\n')
