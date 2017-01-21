@@ -52,4 +52,17 @@ section.has-dark-background {
 			font-family: Monaco, monospace;
 		}
 	}
+
+	.slides section {
+		.fragment.highlight-yellow {
+			opacity: 1;
+			visibility: inherit;
+		}
+
+		.fragment.highlight-yellow.visible {
+			background-color: yellow;
+			border: 3px solid black;
+		}
+	}
+
 }
