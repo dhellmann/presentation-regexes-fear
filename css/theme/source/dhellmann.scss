@@ -46,8 +46,10 @@ section.has-dark-background {
 ** dhellmann
 */
 
-h1, h2, h3, h4, h5, h6 {
-	&.code, & tt {
-		font-family: Monaco, monospace;
+.reveal {
+	h1, h2, h3, h4, h5, h6 {
+		&.code, & tt {
+			font-family: Monaco, monospace;
+		}
 	}
 }
