@@ -5,12 +5,10 @@ from output import capture
 
 
 @capture
-def showcode(filename, extras='data-trim'):
+def showcode(filename, extras='data-trim data-noescape'):
     print('<pre><code {}>\n'.format(extras))
     with open(filename, 'r', encoding='utf-8') as f:
-        body = f.read()
-        body = body.replace('<', '&lt;')
-        print(body)
+        print(f.read())
     print('</code></pre>\n')
 
 

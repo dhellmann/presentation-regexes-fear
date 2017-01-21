@@ -103,7 +103,7 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">t</span>he 
 showcode('ex1.py')
 runscript('ex1.py', fade_in=True)
 ]]]-->
-<pre><code data-trim>
+<pre><code data-trim data-noescape>
 
 import re
 
@@ -755,7 +755,7 @@ verbose = r'''^
 showregex(log_line, verbose, re.VERBOSE)
 ]]]-->
 
-<pre data-trim style="font-size: 80%">
+<pre data-trim data-noescape style="font-size: 80%">
 ^
 ((\d{1,3}\.){3}\d{1,3})  # IP Address
 .*
@@ -803,16 +803,16 @@ verbose = r'''^
 showregex(log_line, verbose, re.VERBOSE)
 ]]]-->
 
-<pre data-trim style="font-size: 80%">
+<pre data-trim data-noescape style="font-size: 80%">
 ^
-(?P&lt;ip>(\d{1,3}\.){3}\d{1,3})
+(?P<ip>(\d{1,3}\.){3}\d{1,3})
 .*
-\[(?P&lt;date>[^]]+)\]
+\[(?P<date>[^]]+)\]
 [^"]*
-"((?P&lt;method>\w+)\s+
-  (?P&lt;path>[^"]*)\s+HTTP/[^"]+)"
+"((?P<method>\w+)\s+
+  (?P<path>[^"]*)\s+HTTP/[^"]+)"
 \s+
-(?P&lt;response>\d+)
+(?P<response>\d+)
 </pre>
 
 <pre data-trim data-noescape>
