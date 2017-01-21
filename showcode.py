@@ -8,7 +8,9 @@ from output import capture
 def showcode(filename, extras='data-trim'):
     print('<pre><code {}>\n'.format(extras))
     with open(filename, 'r', encoding='utf-8') as f:
-        print(f.read())
+        body = f.read()
+        body = body.replace('<', '&lt;')
+        print(body)
     print('</code></pre>\n')
 
 
