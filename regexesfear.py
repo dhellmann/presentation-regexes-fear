@@ -12,13 +12,17 @@ HIGHLIGHT = (
 
 
 @capture
-def showregex(s, p, flags=0):
+def showregex(s, p, flags=0, heading='h2', classes=''):
     if flags & re.VERBOSE:
         print('\n<pre data-trim style="font-size: 80%">')
         print(p.replace('<', '&lt;'))
         print('</pre>')
     else:
-        print('<h2><tt>{}</tt></h2>'.format(p))
+        print('<{heading} class="code {classes}">{p}</{heading}>'.format(
+            p=p,
+            heading=heading,
+            classes=classes,
+        ))
 
     print('\n<pre data-trim data-noescape>')
 

@@ -297,6 +297,10 @@ body {
 /*
 ** dhellmann
 */
+.reveal h1.left, .reveal h2.left, .reveal h3.left, .reveal h4.left, .reveal h5.left, .reveal h6.left {
+  text-align: left;
+  margin-left: 1em; }
+
 .reveal h1.code, .reveal h1 tt, .reveal h2.code, .reveal h2 tt, .reveal h3.code, .reveal h3 tt, .reveal h4.code, .reveal h4 tt, .reveal h5.code, .reveal h5 tt, .reveal h6.code, .reveal h6 tt {
   font-family: Monaco, monospace; }
 
