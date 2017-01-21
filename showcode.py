@@ -12,7 +12,7 @@ def showcode(filename, extras='data-trim data-noescape', lines=None):
     if lines:
         body = body[lines[0]:lines[1]]
     for line in body:
-        print(line, end='')
+        print(line.replace('<', '&lt;'), end='')
     print('</code></pre>\n')
 
 
