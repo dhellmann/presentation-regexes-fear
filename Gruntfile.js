@@ -143,7 +143,8 @@ module.exports = function(grunt) {
 		},
 
 		exec: {
-			publish: 'rsync -av --progress *.html css js lib plugin doughellmann.com:~/doughellmann.com/presentations/regexes-fear/'
+			rsync: './bin/rsync.sh',
+			cog: 'cog.py -r index.html'
 		}
 
 	});
@@ -183,5 +184,9 @@ module.exports = function(grunt) {
 
 	// Set up grunt-exec
 	grunt.loadNpmTasks('grunt-exec');
+
+	// Aliases for the grunt exec commands
+	grunt.registerTask('rsync', ['exec:rsync']);
+	grunt.registerTask('cog', ['exec:cog']);
 
 };
