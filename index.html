@@ -930,6 +930,14 @@ following examples use ``abc_base.py``, which contains:
 </pre>
 
 <!--[[[end]]]-->
+
+<aside class="notes">
+<p>These are two bits of text from my PyMOTW articles.</p>
+
+<p>Note the func and class roles. These caused problems
+with generating the book form of the text, so I wanted
+to remove them from all of the files.</p>
+</aside>
 </section>
 
 <section>
@@ -938,6 +946,10 @@ following examples use ``abc_base.py``, which contains:
 :func:`hasattr()`   -> ``hasattr()``
 :class:`ABCMeta`    -> ``ABCMeta``
 </pre>
+
+<aside class="notes">
+<p>I needed to make two types of transformations.</p>
+</aside>
 </section>
 
 <section>
@@ -962,6 +974,9 @@ text = func.sub(r'``\1()``', text)
 
 <!--[[[end]]]-->
 
+<aside class="notes">
+<p>This first pattern replaces the func references.</p>
+</aside>
 </section>
 
 <section>
@@ -985,6 +1000,10 @@ text = strip.sub(r'``\1``', text)
 </code></pre>
 
 <!--[[[end]]]-->
+
+<aside class="notes">
+<p>This pattern removes all of the other references.</p>
+</aside>
 </section>
 
 <section>
