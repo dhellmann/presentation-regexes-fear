@@ -1,6 +1,6 @@
 <!--[[[cog
 from tools.regexesfear import showregex
-from tools.showcode import showcode, runscript
+from tools.showcode import showcode, showfile, runscript
 import re
 ]]]-->
 <!--[[[end]]]-->
@@ -908,6 +908,100 @@ the substitution expression.</p>
 </aside>
 </section>
 
+<section>
+<h2>Editing with <tt>re</tt></h2>
+<!--[[[cog
+showfile('ex4.txt', mark=[2, 10])
+]]]-->
+<pre data-trim data-noescape>
+
+Abstract base classes are a form of interface checking more
+<mark>strict than individual :func:`hasattr()` checks for particular
+</mark>methods.  By defining an abstract base class, a common API
+can be established for a set of subclasses.  This capability
+is especially useful in situations where someone less familiar
+with the source for an application is
+
+To start, define an abstract base class to represent the API
+of a set of plug-ins for saving and loading data.  Set the
+<mark>metaclass for the new base class to :class:`ABCMeta`, and use
+</mark>decorators to establish the public API for the class.  The
+following examples use ``abc_base.py``, which contains:
+</pre>
+
+<!--[[[end]]]-->
+</section>
+
+<section>
+  <h2>Editing with <tt>re</tt></h2>
+<!--[[[cog
+showcode('ex4.py', lines=(6, 16))
+]]]-->
+<pre><code data-trim data-noescape>
+
+func = re.compile(
+    r'''
+    :func:
+    `
+    ([^()]+?)
+    (?:\(\))?
+    `
+    ''',
+    flags=re.VERBOSE | re.MULTILINE,
+)
+text = func.sub(r'``\1()``', text)
+</code></pre>
+
+<!--[[[end]]]-->
+
+</section>
+
+<section>
+  <h2>Editing with <tt>re</tt></h2>
+<!--[[[cog
+showcode('ex4.py', lines=(18, 28))
+]]]-->
+<pre><code data-trim data-noescape>
+
+strip = re.compile(
+    r'''
+    :(?:class|data|const|command):
+    `
+    ([^()]+?)
+    (?:\(\))?
+    `
+    ''',
+    flags=re.VERBOSE | re.MULTILINE,
+)
+text = strip.sub(r'``\1``', text)
+</code></pre>
+
+<!--[[[end]]]-->
+</section>
+
+<section>
+<!--[[[cog
+runscript('ex4.py', mark=[2, 10])
+]]]-->
+<pre data-trim data-noescape>
+Abstract base classes are a form of interface checking more
+<mark>strict than individual ``hasattr()`` checks for particular</mark>
+methods.  By defining an abstract base class, a common API
+can be established for a set of subclasses.  This capability
+is especially useful in situations where someone less familiar
+with the source for an application is
+
+To start, define an abstract base class to represent the API
+of a set of plug-ins for saving and loading data.  Set the
+<mark>metaclass for the new base class to ``ABCMeta``, and use</mark>
+decorators to establish the public API for the class.  The
+following examples use ``abc_base.py``, which contains:
+
+</pre>
+
+<!--[[[end]]]-->
+
+</section>
 
 <section>
   <h2>Further Reading<h2>
