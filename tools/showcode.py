@@ -41,7 +41,7 @@ def showcode(filename, extras='data-trim data-noescape', lines=None, mark=()):
 
 
 @capture
-def runscript(filename, *args, extras='data-trim data-noescape', fade_in=False):
+def runscript(filename, *args, extras='data-trim data-noescape', fade_in=False, mark=()):
     print('<pre {}'.format(extras), end='')
     if fade_in:
         print(' class="fragment fade-in"', end='')
@@ -52,5 +52,8 @@ def runscript(filename, *args, extras='data-trim data-noescape', fade_in=False):
     )
     output = result.stdout.decode('utf-8').rstrip('\n')
     output = output.replace('<', '&lt;')
-    print(output)
+    for i, line in enumerate(output.splitlines(), 1):
+        if i in mark:
+            line = '<mark>{}</mark>'.format(line)
+        print(line)
     print('\n</pre>\n')
