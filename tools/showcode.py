@@ -5,7 +5,7 @@ from tools.output import capture
 
 
 @capture
-def showcode(filename, extras='data-trim data-noescape', lines=None):
+def showcode(filename, extras='data-trim data-noescape', lines=None, mark=()):
     print('<pre><code {}>\n'.format(extras))
     with open(filename, 'r', encoding='utf-8') as f:
         body = f.readlines()
@@ -14,8 +14,11 @@ def showcode(filename, extras='data-trim data-noescape', lines=None):
         # to pass a start and stop pair by converting from the 1
         # indexed list to the 0 indexed list for the start value.
         body = body[lines[0] - 1:lines[1]]
-    for line in body:
-        print(line.replace('<', '&lt;'), end='')
+    for i, line in enumerate(body, 1):
+        out = line.replace('<', '&lt;')
+        if i in mark:
+            out = '<mark>{}</mark>'.format(out)
+        print(out, end='')
     print('</code></pre>\n')
 
 
