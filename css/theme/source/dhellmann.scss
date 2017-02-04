@@ -63,12 +63,17 @@ section.has-dark-background {
 
 	.slides section {
 
-		.fragment.highlight-yellow {
+		.fragment.highlight-yellow, .fragment.highlight-current-yellow {
 			opacity: 1;
 			visibility: inherit;
 		}
 
 		.fragment.highlight-yellow.visible {
+			background-color: yellow;
+			border: 3px solid black;
+		}
+
+		.fragment.highlight-current-yellow.current-fragment {
 			background-color: yellow;
 			border: 3px solid black;
 		}
