@@ -963,12 +963,28 @@ following examples use ``abc_base.py``, which contains:
 
 <section>
 <pre data-trim style="font-size: 150%">
+<!-- [[[cog
+parts = [
+    (':func:`', ':func:`'),
+    ('hasattr', '([^(]+?)'),
+    ('()', '(?:\(\))?'),
+    ('`', '`'),
+]
+for i, (txt, pat) in enumerate(parts, 1):
+    cog.out('<span class="fragment highlight-current-yellow" data-fragment-index="{}">{}</span>'.format(
+        i, txt))
+cog.out('\n\n')
+for i, (txt, pat) in enumerate(parts, 1):
+    cog.out('<span class="fragment" data-fragment-index="{}">{}</span>\n'.format(
+        i, pat))
+]]]-->
 <span class="fragment highlight-current-yellow" data-fragment-index="1">:func:`</span><span class="fragment highlight-current-yellow" data-fragment-index="2">hasattr</span><span class="fragment highlight-current-yellow" data-fragment-index="3">()</span><span class="fragment highlight-current-yellow" data-fragment-index="4">`</span>
 
 <span class="fragment" data-fragment-index="1">:func:`</span>
 <span class="fragment" data-fragment-index="2">([^(]+?)</span>
 <span class="fragment" data-fragment-index="3">(?:\(\))?</span>
 <span class="fragment" data-fragment-index="4">`</span>
+<!--[[[end]]]-->
 </pre>
 
   <aside class="notes">
@@ -1006,6 +1022,25 @@ text = func.sub(r'``\1()``', text)
 
 <section>
 <pre data-trim style="font-size: 150%">
+<!-- [[[cog
+parts = [
+    (':', ':'),
+    ('class', '(?:class|data|const|command)'),
+    (':`', ':`'),
+    ('ABCMeta', '([^(]+?)'),
+    ('', '(?:\(\))?'),
+    ('`', '`'),
+]
+for i, (txt, pat) in enumerate(parts, 1):
+    if not txt:
+        continue
+    cog.out('<span class="fragment highlight-current-yellow" data-fragment-index="{}">{}</span>'.format(
+        i, txt))
+cog.out('\n\n')
+for i, (txt, pat) in enumerate(parts, 1):
+    cog.out('<span class="fragment" data-fragment-index="{}">{}</span>\n'.format(
+        i, pat))
+]]]-->
 <span class="fragment highlight-current-yellow" data-fragment-index="1">:</span><span class="fragment highlight-current-yellow" data-fragment-index="2">class</span><span class="fragment highlight-current-yellow" data-fragment-index="3">:`</span><span class="fragment highlight-current-yellow" data-fragment-index="4">ABCMeta</span><span class="fragment highlight-current-yellow" data-fragment-index="6">`</span>
 
 <span class="fragment" data-fragment-index="1">:</span>
@@ -1014,6 +1049,7 @@ text = func.sub(r'``\1()``', text)
 <span class="fragment" data-fragment-index="4">([^(]+?)</span>
 <span class="fragment" data-fragment-index="5">(?:\(\))?</span>
 <span class="fragment" data-fragment-index="6">`</span>
+<!--[[[end]]]-->
 </pre>
 
   <aside class="notes">
@@ -1022,7 +1058,7 @@ text = func.sub(r'``\1()``', text)
 </section>
 
 <section>
-  <h2><tt>:class:`ABCMeta`</tt></h2>
+  <h2>Real Example</h2>
 <!--[[[cog
 showcode('ex4.py', lines=(18, 28))
 ]]]-->
