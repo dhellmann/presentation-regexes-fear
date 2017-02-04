@@ -989,6 +989,32 @@ for i, (txt, pat) in enumerate(parts, 1):
 
   <aside class="notes">
     <p>Let's look at the first transformation. It has 4 parts.</p>
+    <ol>
+      <li>The role name with the colons and the open back tick.</li>
+      <li>The body (captured)</li>
+      <li>The optional parens</li>
+      <li>The closing back tick</li>
+    </ol>
+  </aside>
+</section>
+
+<section>
+<pre data-trim style="font-size: 150%">
+:func:`<span class="fragment highlight-current-yellow" data-fragment-index="1">hasattr</span>()`
+
+:func:`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(]+?)</span>(?:\(\))?`
+
+``<span class="fragment highlight-current-yellow" data-fragment-index="1">\1</span>()``
+</pre>
+
+  <aside class="notes">
+    <p>Let's look at the first transformation. It has 4 parts.</p>
+    <ol>
+      <li>The role name with the colons and the open back tick.</li>
+      <li>The body (captured)</li>
+      <li>The optional parens</li>
+      <li>The closing back tick</li>
+    </ol>
   </aside>
 </section>
 
@@ -1054,8 +1080,42 @@ for i, (txt, pat) in enumerate(parts, 1):
 
   <aside class="notes">
     <p>Now the second transformation. It has 6 parts.</p>
+    <ol>
+      <li>The colon to start the role</li>
+      <li>The role name</li>
+      <li>The colon and open back tick</li>
+      <li>The body (captured)</li>
+      <li>Optional parens</li>
+      <li>Closing back tick</li>
+    </ol>
   </aside>
 </section>
+
+
+
+<section>
+<pre data-trim style="font-size: 150%">
+:class:`<span class="fragment highlight-current-yellow" data-fragment-index="1">ABCMeta</span>`
+
+:(?:class|data|const|command):`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(]+?)</span>(?:\(\))?`
+
+``<span class="fragment highlight-current-yellow" data-fragment-index="1">\1</span>``
+</pre>
+
+  <aside class="notes">
+    <p>Now the second transformation. It has 6 parts.</p>
+    <ol>
+      <li>The colon to start the role</li>
+      <li>The role name</li>
+      <li>The colon and open back tick</li>
+      <li>The body (captured)</li>
+      <li>Optional parens</li>
+      <li>Closing back tick</li>
+    </ol>
+  </aside>
+</section>
+
+
 
 <section>
   <h2>Real Example</h2>
@@ -1083,6 +1143,8 @@ text = strip.sub(r'``\1``', text)
     <p>This is the code for removing all of the other references.</p>
   </aside>
 </section>
+
+
 
 <section>
 <!--[[[cog
