@@ -948,7 +948,21 @@ to remove them from all of the files.</p>
 </pre>
 
 <aside class="notes">
-<p>I needed to make two types of transformations.</p>
+<p>I needed to make two types of transformations. (DESCRIBE)</p>
+</aside>
+</section>
+
+<section>
+<pre data-trim style="font-size: 150%">
+<span class="fragment highlight-current-yellow" data-fragment-index="1">:func:`</span><span class="fragment highlight-current-yellow" data-fragment-index="2">hasattr</span><span class="fragment highlight-current-yellow" data-fragment-index="3">()</span><span class="fragment highlight-current-yellow" data-fragment-index="4">`</span>
+
+<span class="fragment" data-fragment-index="1">:func:`</span>
+<span class="fragment" data-fragment-index="2">([^(]+?)</span>
+<span class="fragment" data-fragment-index="3">(?:\(\))?</span>
+<span class="fragment" data-fragment-index="4">`</span>
+</pre>
+<aside class="notes">
+<p>Let's look at the first transformation.</p>
 </aside>
 </section>
 
@@ -963,7 +977,7 @@ func = re.compile(
     r'''
     :func:
     `
-    ([^()]+?)
+    ([^(]+?)
     (?:\(\))?
     `
     ''',
@@ -980,6 +994,19 @@ text = func.sub(r'``\1()``', text)
 </section>
 
 <section>
+<pre data-trim style="font-size: 150%">
+<span class="fragment highlight-current-yellow" data-fragment-index="1">:</span><span class="fragment highlight-current-yellow" data-fragment-index="2">class</span><span class="fragment highlight-current-yellow" data-fragment-index="3">:`</span><span class="fragment highlight-current-yellow" data-fragment-index="4">ABCMeta</span><span class="fragment highlight-current-yellow" data-fragment-index="6">`</span>
+
+<span class="fragment" data-fragment-index="1">:</span>
+<span class="fragment" data-fragment-index="2">(?:class|data|const|command)</span>
+<span class="fragment" data-fragment-index="3">:`</span>
+<span class="fragment" data-fragment-index="4">([^(]+?)</span>
+<span class="fragment" data-fragment-index="5">(?:\(\))?</span>
+<span class="fragment" data-fragment-index="6">`</span>
+</pre>
+</section>
+
+<section>
   <h2><tt>:class:`ABCMeta`</tt></h2>
 <!--[[[cog
 showcode('ex4.py', lines=(18, 28))
@@ -990,7 +1017,7 @@ strip = re.compile(
     r'''
     :(?:class|data|const|command):
     `
-    ([^()]+?)
+    ([^(]+?)
     (?:\(\))?
     `
     ''',
