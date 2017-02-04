@@ -125,14 +125,14 @@ print(pattern.search(s))
 
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The search() method looks for a pattern in the input string and
-returns a Match object with details about where it is found, or None
-if it is not.</p>
+  <aside class="notes">
+    <p>The search() method looks for a pattern in the input string and
+      returns a Match object with details about where it is found, or
+      None if it is not.</p>
 
-<p>We'll talk more about Match objects, but for now I want to focus on
-the language syntax.</p>
-</aside>
+    <p>We'll talk more about Match objects, but for now I want to
+      focus on the language syntax.</p>
+  </aside>
 </section>
 
 
@@ -148,16 +148,17 @@ Does the pattern match <span class="fragment highlight-yellow" data-fragment-ind
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>A single letter is obviously not that useful. The expression syntax
-supports multiple parts.</p>
+  <aside class="notes">
+    <p>A single letter is obviously not that useful. The expression
+      syntax supports multiple parts.</p>
 
-<p>This pattern matches the 4 literal characters in the word "this",
-and is processed by matching the T then H then I then S</p>
+    <p>This pattern matches the 4 literal characters in the word
+      "this", and is processed by matching the T then H then I then
+      S</p>
 
-<p>Each letter is actually a "subexpression", and the usefulness of
-that will be clear as the patterns get more complicated.</p>
-</aside>
+    <p>Each letter is actually a "subexpression", and the usefulness
+      of that will be clear as the patterns get more complicated.</p>
+  </aside>
 </section>
 
 
@@ -173,13 +174,14 @@ Does the pa<span class="fragment highlight-yellow" data-fragment-index="1">tt</s
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Sometimes it's useful to look for the same expression appearing
-multiple times in a row.</p>
+  <aside class="notes">
+    <p>Sometimes it's useful to look for the same expression appearing
+      multiple times in a row.</p>
 
-<p>One way to do that is to repeat the expression in the pattern. The
-expression language supports repetition rules directly, though.</p>
-</aside>
+    <p>One way to do that is to repeat the expression in the
+      pattern. The expression language supports repetition rules
+      directly, though.</p>
+  </aside>
 </section>
 
 
@@ -195,11 +197,11 @@ Does the pa<span class="fragment highlight-yellow" data-fragment-index="1">tt</s
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>This expression means match the letter T appearing twice.</p>
+  <aside class="notes">
+    <p>This expression means match the letter T appearing twice.</p>
 
-<p>It's obviously more of a shortcut for more recurrences than 2.</p>
-</aside>
+    <p>It's obviously more of a shortcut for more recurrences than 2.</p>
+  </aside>
 </section>
 
 
@@ -215,9 +217,9 @@ Does the pa<span class="fragment highlight-yellow" data-fragment-index="1">tt</s
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>This syntax means match T appearing between 2 and 3 times.</p>
-</aside>
+  <aside class="notes">
+    <p>This syntax means match T appearing between 2 and 3 times.</p>
+  </aside>
 </section>
 
 
@@ -233,13 +235,14 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">t</span>he 
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>This syntax means match T at least one time.</p>
+  <aside class="notes">
+    <p>This syntax means match T at least one time.</p>
 
-<p>The results look similar to the first expression, except that the
-pair of Ts in "pattern" are matched as one instance.</p>
-</aside>
+    <p>The results look similar to the first expression, except that
+      the pair of Ts in "pattern" are matched as one instance.</p>
+  </aside>
 </section>
+
 
 
 <section>
@@ -253,13 +256,13 @@ Does the pattern match this <span class="fragment highlight-yellow" data-fragmen
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Sometime's it's useful to match part of the text without being
-explicit about it. The dot matches any character.</p>
+  <aside class="notes">
+    <p>Sometime's it's useful to match part of the text without being
+      explicit about it. The dot matches any character.</p>
 
-<p>This example looks for a T followed by any 2 characters followed by
-another T and matches a total of 4 characters.</p>
-</aside>
+    <p>This example looks for a T followed by any 2 characters
+      followed by another T and matches a total of 4 characters.</p>
+  </aside>
 </section>
 
 
@@ -275,15 +278,15 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">the pattern
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Dots can be combined with wildcards, too, but be careful!</p>
+  <aside class="notes">
+    <p>Dots can be combined with wildcards, too, but be careful!</p>
 
-<p>Repetition using + is "greedy" by default, and when that's combined
-with the dot wildcard it can result in matching more than
-expected.</p>
+    <p>Repetition using + is "greedy" by default, and when that's
+      combined with the dot wildcard it can result in matching more
+      than expected.</p>
 
-<p><em>This is the most common error when working with regexes.</em></p>
-</aside>
+    <p><em>This is the most common error when working with regexes.</em></p>
+  </aside>
 </section>
 
 
@@ -299,10 +302,10 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">the pat</sp
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Adding a ? disables greedy mode.</p>
-<p>The results may still be surprising.</p>
-</aside>
+  <aside class="notes">
+    <p>Adding a ? disables greedy mode.</p>
+    <p>The results may still be surprising.</p>
+  </aside>
 </section>
 
 
@@ -318,10 +321,10 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">the pattern
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>A * instead of + means "0 or more"</p>
-<p>Again, the greedy operator has consumed the entire input text.</p>
-</aside>
+  <aside class="notes">
+    <p>A * instead of + means "0 or more"</p>
+    <p>Again, the greedy operator has consumed the entire input text.</p>
+  </aside>
 </section>
 
 
@@ -337,9 +340,9 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">the pat</sp
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Adding a question mark gives us 3 matches again.</p>
-</aside>
+  <aside class="notes">
+    <p>Adding a question mark gives us 3 matches again.</p>
+  </aside>
 </section>
 
 
@@ -355,10 +358,10 @@ Does the pat<span class="fragment highlight-yellow" data-fragment-index="1">te</
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The square brackets define a "character set", any one of which can
-match in one position.</p>
-</aside>
+  <aside class="notes">
+    <p>The square brackets define a "character set", any one of which
+      can match in one position.</p>
+  </aside>
 </section>
 
 
@@ -374,10 +377,10 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">th</span>e 
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>If the first entry in the character set is ^ (caret), then the set
-is negated and the match must <em>not</em> be a member.</p>
-</aside>
+  <aside class="notes">
+    <p>If the first entry in the character set is ^ (caret), then the
+      set is negated and the match must <em>not</em> be a member.</p>
+  </aside>
 </section>
 
 
@@ -393,9 +396,10 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">th</span>e 
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The character set can be defined using one or more ranges, using a dash between boundaries.</p>
-</aside>
+  <aside class="notes">
+    <p>The character set can be defined using one or more ranges,
+    using a dash between boundaries.</p>
+  </aside>
 </section>
 
 
@@ -411,11 +415,11 @@ Athens, <span class="fragment highlight-yellow" data-fragment-index="1">30605</s
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Several pre-defined character classes are available for use. They
-are expressed using a backslash to escape a character mneumonic. In
-this case, \d means a digit.</p>
-</aside>
+  <aside class="notes">
+    <p>Several pre-defined character classes are available for
+      use. They are expressed using a backslash to escape a character
+      mneumonic. In this case, \d means a digit.</p>
+  </aside>
 </section>
 
 
@@ -431,10 +435,11 @@ showregex("Athens, 30605", r"\D+")
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The lower and upper case versions of an escape sequence are usually
-opposites. So backslash uppercase D means "not a digit".</p>
-</aside>
+  <aside class="notes">
+    <p>The lower and upper case versions of an escape sequence are
+      usually opposites. So backslash uppercase D means "not a
+      digit".</p>
+  </aside>
 </section>
 
 
@@ -450,9 +455,9 @@ Athens,<span class="fragment highlight-yellow" data-fragment-index="1"> </span>3
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The whitespace class matches tabs, spaces, and newlines.</p>
-</aside>
+  <aside class="notes">
+    <p>The whitespace class matches tabs, spaces, and newlines.</p>
+  </aside>
 </section>
 
 
@@ -468,8 +473,8 @@ showregex("Athens, 30605", r"\S+")
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-</aside>
+  <aside class="notes">
+  </aside>
 </section>
 
 
@@ -485,12 +490,12 @@ showregex("Athens, 30605", r"\w+")
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>All of the pre-defined character classes are unicode and
-locale-aware, which is especially useful for alphanumeric.<p>
-<p>Note here that the comma and space are excluded because they are
-not alphanumeric.<p>
-</aside>
+  <aside class="notes">
+    <p>All of the pre-defined character classes are unicode and
+      locale-aware, which is especially useful for alphanumeric.<p>
+    <p>Note here that the comma and space are excluded because they
+      are not alphanumeric.<p>
+  </aside>
 </section>
 
 
@@ -506,8 +511,8 @@ Athens<span class="fragment highlight-yellow" data-fragment-index="1">, </span>3
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-</aside>
+  <aside class="notes">
+  </aside>
 </section>
 
 
@@ -524,11 +529,11 @@ Does the pattern match this text?
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Within a pattern, caret means to anchor the search to the start of
-the string. The remainder of the expression will only match if it
-appears at the start of the string or line.</p>
-</aside>
+  <aside class="notes">
+    <p>Within a pattern, caret means to anchor the search to the start
+      of the string. The remainder of the expression will only match
+      if it appears at the start of the string or line.</p>
+  </aside>
 </section>
 
 
@@ -544,9 +549,9 @@ Does the pattern match this text<span class="fragment highlight-yellow" data-fra
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>A dollar sign means anchor to the end of the string.</p>
-</aside>
+  <aside class="notes">
+    <p>A dollar sign means anchor to the end of the string.</p>
+  </aside>
 </section>
 
 
@@ -562,9 +567,9 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">t</span>he 
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The lowercase b matches the beginning of a word.</p>
-</aside>
+  <aside class="notes">
+    <p>The lowercase b matches the beginning of a word.</p>
+  </aside>
 </section>
 
 
@@ -580,9 +585,9 @@ Does the pa<span class="fragment highlight-yellow" data-fragment-index="1">t</sp
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The uppercase B matches anywhere other than the beginning of a word.</p>
-</aside>
+  <aside class="notes">
+    <p>The uppercase B matches anywhere other than the beginning of a word.</p>
+  </aside>
 </section>
 
 
@@ -601,13 +606,14 @@ Does the pattern match this <span class="fragment highlight-yellow" data-fragmen
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Parentheses define groups or sub-patterns. This expression looks
-for the characters between Ts at the start and end of a word.</p>
+  <aside class="notes">
+    <p>Parentheses define groups or sub-patterns. This expression
+      looks for the characters between Ts at the start and end of a
+      word.</p>
 
-<p>The entire pattern matches "text?" at the end of the string, but
-the group only contains "ex".</p>
-</aside>
+    <p>The entire pattern matches "text?" at the end of the string,
+      but the group only contains "ex".</p>
+  </aside>
 </section>
 
 
@@ -629,11 +635,11 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">the </span>
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>A vertical bar within a group defines an alternate pattern. This
-pattern looks for three letter words starting with T or four letter
-words starting and ending with T.</p>
-</aside>
+  <aside class="notes">
+    <p>A vertical bar within a group defines an alternate
+      pattern. This pattern looks for three letter words starting with
+      T or four letter words starting and ending with T.</p>
+  </aside>
 </section>
 
 
@@ -659,11 +665,13 @@ showregex(log_line, ip_address, classes="left")
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Let's look at a more realistic example of parsing a log line and see how groups make that possible.</p>
-<p>This patterns matches the IP address in the log line.</p>
-<p>Groups can be nested and combined with the repeat operators.</p>
-</aside>
+  <aside class="notes">
+    <p>Let's look at a more realistic example of parsing a log line
+    and see how groups make that possible.</p>
+    <p>This patterns matches the IP address in the log line.</p>
+    <p>Groups can be nested and combined with the repeat
+    operators.</p>
+  </aside>
 </section>
 
 
@@ -682,11 +690,11 @@ showregex(log_line, date)
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The date appears between square brackets, and we have to escape the
-brackets to avoid having them look like we are defining a character
-class.</p>
-</aside>
+  <aside class="notes">
+    <p>The date appears between square brackets, and we have to escape
+      the brackets to avoid having them look like we are defining a
+      character class.</p>
+  </aside>
 </section>
 
 
@@ -707,11 +715,11 @@ showregex(log_line, request, heading='h4')
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>The incoming web request appears between quotes and is made up of
-three parts. We're interested in the request method (Get or Put) and
-the path for the URL.</p>
-</aside>
+  <aside class="notes">
+    <p>The incoming web request appears between quotes and is made up
+      of three parts. We're interested in the request method (Get or
+      Put) and the path for the URL.</p>
+  </aside>
 </section>
 
 
@@ -736,11 +744,11 @@ showregex(log_line, all_parts, heading='h4', classes='left')
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>If we put it all together, we can see that the pieces we want are
-in the groups.</p>
-<p>But ew, that expression is a real brain twister.</p>
-</aside>
+  <aside class="notes">
+    <p>If we put it all together, we can see that the pieces we want
+      are in the groups.</p>
+    <p>But ew, that expression is a real brain twister.</p>
+  </aside>
 </section>
 
 
@@ -783,11 +791,11 @@ showregex(log_line, verbose, re.VERBOSE)
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>We can get around that by using <em>verbose</em> mode.</p>
-<p>Supports multi-line strings where whitespace is ignored.</p>
-<p>Supports comments</p>
-</aside>
+  <aside class="notes">
+    <p>We can get around that by using <em>verbose</em> mode.</p>
+    <p>Supports multi-line strings where whitespace is ignored.</p>
+    <p>Supports comments</p>
+  </aside>
 </section>
 
 
@@ -830,12 +838,12 @@ response  : 200
 </pre>
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Another way to make the results of patterns easier to work with is
-to add names to the groups.</p>
-<p>This lets you access them directly, without having to keep up with
-counting.</p>
-</aside>
+  <aside class="notes">
+    <p>Another way to make the results of patterns easier to work with
+      is to add names to the groups.</p>
+    <p>This lets you access them directly, without having to keep up
+      with counting.</p>
+  </aside>
 </section>
 
 <section>
@@ -867,10 +875,10 @@ for line in open('ex2.log', 'r', encoding='utf-8'):
 
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>Using the same pattern from the last slide, this example
-prints the IP address and path for requests in the log file.</p>
-</aside>
+  <aside class="notes">
+    <p>Using the same pattern from the last slide, this example prints
+      the IP address and path for requests in the log file.</p>
+  </aside>
 </section>
 
 <section>
@@ -900,16 +908,16 @@ HTML: Make this &lt;b>bold&lt;/b>.  This &lt;b>too&lt;/b>.
 
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>This example uses the sub() method to convert simple
-text markup to HTML.</p>
-<p>Notice the expression has a group, and the group is referenced in
-the substitution expression.</p>
-</aside>
+  <aside class="notes">
+    <p>This example uses the sub() method to convert simple text
+      markup to HTML.</p>
+    <p>Notice the expression has a group, and the group is referenced
+      in the substitution expression.</p>
+  </aside>
 </section>
 
 <section>
-<h2>Editing with <tt>re</tt></h2>
+<h2>Real Example</h2>
 <!--[[[cog
 showfile('ex4.txt', mark=[2, 10])
 ]]]-->
@@ -931,25 +939,26 @@ following examples use ``abc_base.py``, which contains:
 
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>These are two bits of text from my PyMOTW articles.</p>
+  <aside class="notes">
+    <p>These are two bits of text from my PyMOTW articles.</p>
 
-<p>Note the func and class roles. These caused problems
-with generating the book form of the text, so I wanted
-to remove them from all of the files.</p>
-</aside>
+    <p>Note the func and class roles. These caused problems with
+      generating the book form of the text, so I wanted to remove them
+      from all of the files.</p>
+  </aside>
 </section>
 
 <section>
-<h2>Editing with <tt>re</tt></h2>
+<h2>Real Example</h2>
 <pre data-trim data-noescape>
 :func:`hasattr()`   -> ``hasattr()``
 :class:`ABCMeta`    -> ``ABCMeta``
 </pre>
 
-<aside class="notes">
-<p>I needed to make two types of transformations. (DESCRIBE)</p>
-</aside>
+  <aside class="notes">
+    <p>I needed to make two types of transformations. It will be
+    easier to manage them as separate expressions. (DESCRIBE)</p>
+  </aside>
 </section>
 
 <section>
@@ -961,9 +970,10 @@ to remove them from all of the files.</p>
 <span class="fragment" data-fragment-index="3">(?:\(\))?</span>
 <span class="fragment" data-fragment-index="4">`</span>
 </pre>
-<aside class="notes">
-<p>Let's look at the first transformation.</p>
-</aside>
+
+  <aside class="notes">
+    <p>Let's look at the first transformation. It has 4 parts.</p>
+  </aside>
 </section>
 
 <section>
@@ -988,9 +998,10 @@ text = func.sub(r'``\1()``', text)
 
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>This first pattern replaces the func references.</p>
-</aside>
+  <aside class="notes">
+    <p>This is the actual code for the pattern that replace the func
+      references.</p>
+  </aside>
 </section>
 
 <section>
@@ -1004,6 +1015,10 @@ text = func.sub(r'``\1()``', text)
 <span class="fragment" data-fragment-index="5">(?:\(\))?</span>
 <span class="fragment" data-fragment-index="6">`</span>
 </pre>
+
+  <aside class="notes">
+    <p>Now the second transformation. It has 6 parts.</p>
+  </aside>
 </section>
 
 <section>
@@ -1028,9 +1043,9 @@ text = strip.sub(r'``\1``', text)
 
 <!--[[[end]]]-->
 
-<aside class="notes">
-<p>This pattern removes all of the other references.</p>
-</aside>
+  <aside class="notes">
+    <p>This is the code for removing all of the other references.</p>
+  </aside>
 </section>
 
 <section>
