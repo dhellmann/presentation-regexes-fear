@@ -79,9 +79,17 @@ section.has-dark-background {
 		}
 
 		/* lineselect.js */
-		pre .selected {
-            background: #fff;
+		pre span.selected {
+            // background: #fff;
             border: .15em solid #f66;
+            padding: .15em .15em .05em .15em;
+            margin: -.30em -.30em -.20em -.30em;
+        }
+
+		/* lineselect.js */
+		code span.selected {
+            // background: #fff;
+            border: .15em solid yellow;
             padding: .15em .15em .05em .15em;
             margin: -.30em -.30em -.20em -.30em;
         }
