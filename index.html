@@ -958,7 +958,6 @@ following examples use ``abc_base.py``, which contains:
 </section>
 
 <section>
-<pre data-trim style="font-size: 150%">
 <!-- [[[cog
 parts = [
     (':func:`', ':func:`'),
@@ -966,6 +965,7 @@ parts = [
     ('()', '(?:\(\))?'),
     ('`', '`'),
 ]
+cog.out('<pre data-trim style="font-size: 140%">')
 for i, (txt, pat) in enumerate(parts, 1):
     cog.out('<span class="fragment highlight-current-yellow" data-fragment-index="{}">{}</span>'.format(
         i, txt))
@@ -973,15 +973,16 @@ cog.out('\n\n')
 for i, (txt, pat) in enumerate(parts, 1):
     cog.out('<span class="fragment" data-fragment-index="{}">{}</span>\n'.format(
         i, pat))
+cog.out('</pre>\n')
 ]]]-->
-<span class="fragment highlight-current-yellow" data-fragment-index="1">:func:`</span><span class="fragment highlight-current-yellow" data-fragment-index="2">hasattr</span><span class="fragment highlight-current-yellow" data-fragment-index="3">()</span><span class="fragment highlight-current-yellow" data-fragment-index="4">`</span>
+<pre data-trim style="font-size: 140%"><span class="fragment highlight-current-yellow" data-fragment-index="1">:func:`</span><span class="fragment highlight-current-yellow" data-fragment-index="2">hasattr</span><span class="fragment highlight-current-yellow" data-fragment-index="3">()</span><span class="fragment highlight-current-yellow" data-fragment-index="4">`</span>
 
 <span class="fragment" data-fragment-index="1">:func:`</span>
 <span class="fragment" data-fragment-index="2">([^(]+?)</span>
 <span class="fragment" data-fragment-index="3">(?:\(\))?</span>
 <span class="fragment" data-fragment-index="4">`</span>
-<!--[[[end]]]-->
 </pre>
+<!--[[[end]]]-->
 
   <aside class="notes">
     <p>Let's look at the first transformation. It has 4 parts.</p>
@@ -995,7 +996,7 @@ for i, (txt, pat) in enumerate(parts, 1):
 </section>
 
 <section>
-<pre data-trim style="font-size: 150%">
+<pre data-trim style="font-size: 140%">
 :func:`<span class="fragment highlight-current-yellow" data-fragment-index="1">hasattr</span>()`
 
 :func:`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(]+?)</span>(?:\(\))?`
@@ -1042,16 +1043,16 @@ text = func.sub(r'``\1()``', text)
 </section>
 
 <section>
-<pre data-trim style="font-size: 150%">
 <!-- [[[cog
 parts = [
     (':', ':'),
-    ('class', '(?:class|data|const|command)'),
+    ('class', '(?:class|const)'),
     (':`', ':`'),
     ('ABCMeta', '([^(]+?)'),
     ('', '(?:\(\))?'),
     ('`', '`'),
 ]
+cog.out('<pre data-trim style="font-size: 140%">')
 for i, (txt, pat) in enumerate(parts, 1):
     if not txt:
         continue
@@ -1061,17 +1062,18 @@ cog.out('\n\n')
 for i, (txt, pat) in enumerate(parts, 1):
     cog.out('<span class="fragment" data-fragment-index="{}">{}</span>\n'.format(
         i, pat))
+cog.out('</pre>\n')
 ]]]-->
-<span class="fragment highlight-current-yellow" data-fragment-index="1">:</span><span class="fragment highlight-current-yellow" data-fragment-index="2">class</span><span class="fragment highlight-current-yellow" data-fragment-index="3">:`</span><span class="fragment highlight-current-yellow" data-fragment-index="4">ABCMeta</span><span class="fragment highlight-current-yellow" data-fragment-index="6">`</span>
+<pre data-trim style="font-size: 140%"><span class="fragment highlight-current-yellow" data-fragment-index="1">:</span><span class="fragment highlight-current-yellow" data-fragment-index="2">class</span><span class="fragment highlight-current-yellow" data-fragment-index="3">:`</span><span class="fragment highlight-current-yellow" data-fragment-index="4">ABCMeta</span><span class="fragment highlight-current-yellow" data-fragment-index="6">`</span>
 
 <span class="fragment" data-fragment-index="1">:</span>
-<span class="fragment" data-fragment-index="2">(?:class|data|const|command)</span>
+<span class="fragment" data-fragment-index="2">(?:class|const)</span>
 <span class="fragment" data-fragment-index="3">:`</span>
 <span class="fragment" data-fragment-index="4">([^(]+?)</span>
 <span class="fragment" data-fragment-index="5">(?:\(\))?</span>
 <span class="fragment" data-fragment-index="6">`</span>
-<!--[[[end]]]-->
 </pre>
+<!--[[[end]]]-->
 
   <aside class="notes">
     <p>Now the second transformation. It has 6 parts.</p>
@@ -1089,10 +1091,10 @@ for i, (txt, pat) in enumerate(parts, 1):
 
 
 <section>
-<pre data-trim style="font-size: 150%">
+<pre data-trim style="font-size: 140%">
 :class:`<span class="fragment highlight-current-yellow" data-fragment-index="1">ABCMeta</span>`
 
-:(?:class|data|const|command):`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(]+?)</span>(?:\(\))?`
+:(?:class|const):`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(]+?)</span>(?:\(\))?`
 
 ``<span class="fragment highlight-current-yellow" data-fragment-index="1">\1</span>``
 </pre>
