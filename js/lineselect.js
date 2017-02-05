@@ -29,7 +29,7 @@
     };
 
     var select_line_by_number = function (container, lineno, single) {
-		console.log('select_line_by_number ' + lineno + ' ' + single);
+		//console.log('select_line_by_number ' + lineno + ' ' + single);
         var the_line = $(container.find(sub_class)[lineno-1]);
         select_line(container, the_line, single);
     };
@@ -45,12 +45,12 @@
 	};
 
 	function enableLineSelection() {
-		console.log('lineselect: enabling');
+		//console.log('lineselect: enabling');
 		dom.wrapper.classList.add('selecting-lines');
 	};
 
 	function disableLineSelection() {
-		console.log('lineselect: disabling');
+		//console.log('lineselect: disabling');
 		dom.wrapper.classList.remove('selecting-lines');
 	};
 
@@ -64,18 +64,18 @@
 	};
 
     var keydown_fn = function (e) {
-		console.log('lineselect.keydown_fn' + e.keyCode);
+		//console.log('lineselect.keydown_fn' + e.keyCode);
         // Find the one container to manipulate.
         var container = $(options.active_sel + " ." + container_class + options.focus_class + ":visible");
         if (container.length === 0) {
             container = $(options.active_sel + " ." + container_class + ":visible");
         }
         if (container.length === 0) {
-            console.log("looking for", options.active_sel + "." + container_class);
+            //console.log("looking for", options.active_sel + "." + container_class);
             container = $(options.active_sel + "." + container_class);
         }
         if (container.length !== 1) {
-            console.log("Done, not 1", container_class, container.length);
+            //console.log("Done, not 1", container_class, container.length);
             return;
         }
 
@@ -89,7 +89,7 @@
         switch (e.keyCode) {
 
 	    case 190:  // toggle using blank screen button on logitech remote
-			console.log('lineselect:toggle');
+			//console.log('lineselect:toggle');
 			toggleLineSelection();
 			if (lineSelectionActive()) {
 				selected = 1;
@@ -106,20 +106,20 @@
 		case 78: case 34:  // logitech remote
         case 74:    // J: down
 			if (lineSelectionActive()) {
-				console.log('lineselect: down');
+				//console.log('lineselect: down');
 				selected += 1;
 			} else {
-				console.log('lineselect: inactive');
+				//console.log('lineselect: inactive');
 			}
             break;
 
 		case 80: case 33:  // logitech remote
         case 75:    // K: up
 			if (lineSelectionActive()) {
-				console.log('lineselect: up');
+				//console.log('lineselect: up');
 				selected -= 1;
 			} else {
-				console.log('lineselect: inactive');
+				//console.log('lineselect: inactive');
 			}
             break;
 
@@ -129,12 +129,12 @@
             return;
 
         default:
-            console.log('down: ' + e.keyCode);
+            //console.log('down: ' + e.keyCode);
             return;
         }
 
-		console.log('lineselect: ' + container.html());
-		console.log('lineselect: ' + sub_class + ' ' + selected + ' ' + container.find(sub_class).length);
+		//console.log('lineselect: ' + container.html());
+		//console.log('lineselect: ' + sub_class + ' ' + selected + ' ' + container.find(sub_class).length);
         if (selected < 1 || selected > container.find(sub_class).length) {
             return;
         }
@@ -154,13 +154,13 @@
 		dom.wrapper = document.querySelector( '.reveal' );
 		dom.slides = document.querySelector( '.reveal .slides' );
 
-		console.log('making lines selectable');
+		//console.log('making lines selectable');
 
         // In every container, find all the "lines", mark them, and give them
         // click handlers.
         return elements.each(function () {
             var container = $(this);
-			console.log('BEFORE: ', container.html());
+			//console.log('BEFORE: ', container.html());
             container.addClass(container_class);
             container.find(opts.lines)
                 .addClass(sub_class)
@@ -169,7 +169,7 @@
                         select_line(container, $(this), !e.ctrlKey);
                     }
                 );
-			console.log('AFTER: ', container.html());
+			//console.log('AFTER: ', container.html());
         });
     };
 
