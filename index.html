@@ -1185,13 +1185,60 @@ following examples use ``abc_base.py``, which contains:
 
 
 		<script>
+
+          function _prev_slide() {
+              if (!_reveal_navigation_active()) {
+                  return;
+              }
+              console.log('reveal: prev');
+              Reveal.navigatePrev();
+          };
+
+          function _next_slide() {
+              if (!_reveal_navigation_active()) {
+                  return;
+              }
+              console.log('reveal: next');
+              Reveal.navigateNext();
+          };
+
+          function _reveal_navigation_active () {
+              return !document.querySelector( '.reveal' ).classList.contains('reveal-nav-off');
+          };
+
+          function _toggle_reveal_navigation () {
+              if (_reveal_navigation_active()) {
+                  console.log('reveal: turning off nav');
+                  document.querySelector( '.reveal' ).classList.add('reveal-nav-off');
+              } else {
+                  console.log('reveal: turning on nav');
+                  document.querySelector( '.reveal' ).classList.remove('reveal-nav-off');
+              };
+          };
+
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
 
                 keyboard: {
-                    // Disable Logitech presenter remote black screen button
-                    190: null,
+                    // Use Logitech presenter remote black screen button
+                    // to control when we are changing slides vs. selected lines.
+                    190: _toggle_reveal_navigation,
+				// p, page up
+			        80: _prev_slide,
+                    33: _prev_slide,
+				// n, page down
+		            78: _next_slide,
+                    34: _next_slide,
+				<!-- // h, left -->
+				<!-- case 72: case 37: navigateLeft(); break; -->
+				<!-- // l, right -->
+				<!-- case 76: case 39: navigateRight(); break; -->
+				<!-- // k, up -->
+				<!-- case 75: case 38: navigateUp(); break; -->
+				<!-- // j, down -->
+				<!-- case 74: case 40: navigateDown(); break; -->
+
                 },
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
