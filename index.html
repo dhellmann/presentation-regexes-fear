@@ -919,19 +919,19 @@ HTML: Make this &lt;b>bold&lt;/b>.  This &lt;b>too&lt;/b>.
 showfile('ex4.txt', mark=[2, 10])
 ]]]-->
 <pre class="lineselect_selectable" data-trim data-noescape>
-<span class="line">Abstract base classes are a form of interface checking more
-</span><mark><span class="line">strict than individual :func:`hasattr()` checks for particular
-</span></mark><span class="line">methods.  By defining an abstract base class, a common API
-</span><span class="line">can be established for a set of subclasses.  This capability
-</span><span class="line">is especially useful in situations where someone less familiar
-</span><span class="line">with the source for an application is
-</span><span class="line">
-</span><span class="line">To start, define an abstract base class to represent the API
-</span><span class="line">of a set of plug-ins for saving and loading data.  Set the
-</span><mark><span class="line">metaclass for the new base class to :class:`ABCMeta`, and use
-</span></mark><span class="line">decorators to establish the public API for the class.  The
-</span><span class="line">following examples use ``abc_base.py``, which contains:
-</span></pre>
+Abstract base classes are a form of interface checking more
+<mark>strict than individual :func:`hasattr()` checks for particular
+</mark>methods.  By defining an abstract base class, a common API
+can be established for a set of subclasses.  This capability
+is especially useful in situations where someone less familiar
+with the source for an application is
+
+To start, define an abstract base class to represent the API
+of a set of plug-ins for saving and loading data.  Set the
+<mark>metaclass for the new base class to :class:`ABCMeta`, and use
+</mark>decorators to establish the public API for the class.  The
+following examples use ``abc_base.py``, which contains:
+</pre>
 
 <!--[[[end]]]-->
 
