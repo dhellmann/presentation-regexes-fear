@@ -6,7 +6,7 @@ from tools.output import capture
 
 @capture
 def showfile(filename, extras='data-trim data-noescape', lines=None, mark=()):
-    print('<pre {}>\n'.format(extras))
+    print('<pre class="lineselect_selectable" {}>'.format(extras))
     with open(filename, 'r', encoding='utf-8') as f:
         body = f.readlines()
     if lines:
@@ -16,6 +16,7 @@ def showfile(filename, extras='data-trim data-noescape', lines=None, mark=()):
         body = body[lines[0] - 1:lines[1]]
     for i, line in enumerate(body, 1):
         out = line.replace('<', '&lt;')
+        out = '<line>{}</line>'.format(out)
         if i in mark:
             out = '<mark>{}</mark>'.format(out)
         print(out, end='')
@@ -24,7 +25,7 @@ def showfile(filename, extras='data-trim data-noescape', lines=None, mark=()):
 
 @capture
 def showcode(filename, extras='data-trim data-noescape', lines=None, mark=()):
-    print('<pre><code {}>\n'.format(extras))
+    print('<pre><code class="lineselect_selectable" {}>'.format(extras))
     with open(filename, 'r', encoding='utf-8') as f:
         body = f.readlines()
     if lines:

@@ -77,6 +77,14 @@ section.has-dark-background {
 			background-color: yellow;
 			border: 3px solid black;
 		}
+
+		/* lineselect.js */
+		pre .selected {
+            background: #fff;
+            border: .15em solid #f66;
+            padding: .15em .15em .05em .15em;
+            margin: -.30em -.30em -.20em -.30em;
+        }
 	}
 
 }

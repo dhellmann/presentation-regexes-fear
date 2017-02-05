@@ -107,8 +107,7 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">t</span>he 
 showcode('ex1.py')
 runscript('ex1.py', fade_in=True)
 ]]]-->
-<pre><code data-trim data-noescape>
-
+<pre><code class="lineselect_selectable" data-trim data-noescape>
 import re
 
 s = "Does the pattern match this text?"
@@ -852,8 +851,7 @@ response  : 200
 showcode('ex2.py', lines=(15, 18))
 runscript('ex2.py', 'ex2.log')
 ]]]-->
-<pre><code data-trim data-noescape>
-
+<pre><code class="lineselect_selectable" data-trim data-noescape>
 for line in open('ex2.log', 'r', encoding='utf-8'):
     parsed = _pattern.search(line).groupdict()
     print('{ip:&lt;15}: {path}'.format(**parsed))
@@ -887,8 +885,7 @@ for line in open('ex2.log', 'r', encoding='utf-8'):
 showcode('ex3.py')
 runscript('ex3.py')
 ]]]-->
-<pre><code data-trim data-noescape>
-
+<pre><code class="lineselect_selectable" data-trim data-noescape>
 import re
 
 bold = re.compile(r'\*{2}(.*?)\*{2}')
@@ -921,21 +918,20 @@ HTML: Make this &lt;b>bold&lt;/b>.  This &lt;b>too&lt;/b>.
 <!--[[[cog
 showfile('ex4.txt', mark=[2, 10])
 ]]]-->
-<pre data-trim data-noescape>
-
-Abstract base classes are a form of interface checking more
-<mark>strict than individual :func:`hasattr()` checks for particular
-</mark>methods.  By defining an abstract base class, a common API
-can be established for a set of subclasses.  This capability
-is especially useful in situations where someone less familiar
-with the source for an application is
-
-To start, define an abstract base class to represent the API
-of a set of plug-ins for saving and loading data.  Set the
-<mark>metaclass for the new base class to :class:`ABCMeta`, and use
-</mark>decorators to establish the public API for the class.  The
-following examples use ``abc_base.py``, which contains:
-</pre>
+<pre class="lineselect_selectable" data-trim data-noescape>
+<line>Abstract base classes are a form of interface checking more
+</line><mark><line>strict than individual :func:`hasattr()` checks for particular
+</line></mark><line>methods.  By defining an abstract base class, a common API
+</line><line>can be established for a set of subclasses.  This capability
+</line><line>is especially useful in situations where someone less familiar
+</line><line>with the source for an application is
+</line><line>
+</line><line>To start, define an abstract base class to represent the API
+</line><line>of a set of plug-ins for saving and loading data.  Set the
+</line><mark><line>metaclass for the new base class to :class:`ABCMeta`, and use
+</line></mark><line>decorators to establish the public API for the class.  The
+</line><line>following examples use ``abc_base.py``, which contains:
+</line></pre>
 
 <!--[[[end]]]-->
 
@@ -1023,8 +1019,7 @@ for i, (txt, pat) in enumerate(parts, 1):
 <!--[[[cog
 showcode('ex4.py', lines=(6, 16))
 ]]]-->
-<pre><code data-trim data-noescape>
-
+<pre><code class="lineselect_selectable" data-trim data-noescape>
 func = re.compile(
     r'''
     :func:
@@ -1122,8 +1117,7 @@ for i, (txt, pat) in enumerate(parts, 1):
 <!--[[[cog
 showcode('ex4.py', lines=(18, 28))
 ]]]-->
-<pre><code data-trim data-noescape>
-
+<pre><code class="lineselect_selectable" data-trim data-noescape>
 strip = re.compile(
     r'''
     :(?:class|data|const|command):
@@ -1186,11 +1180,19 @@ following examples use ``abc_base.py``, which contains:
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="js/jquery-3.1.1.js"></script>
+		<script src="js/lineselect.js"></script>
+
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
+
+                keyboard: {
+                    // Disable Logitech presenter remote black screen button
+                    190: null,
+                },
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
@@ -1201,6 +1203,27 @@ following examples use ``abc_base.py``, which contains:
                       async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
 			});
+
+            <!-- Reveal.addEventListener( 'slidechanged', function( event ) { -->
+            <!-- // event.previousSlide, event.currentSlide, event.indexh, event.indexv -->
+            <!--  event.currentSlide.find('pre') -->
+            <!-- } ); -->
+
 		</script>
+
+
+        <script>
+          $(function() {
+            $('.selectable').each(function (i, e) {
+                var $e = $(e);
+                var h = $e.html();
+                h = h.replace(/\n\n/g, "\n \n");
+                h = h.replace(/\n/g, "</span>\n<span class='line'>");
+                h = "<span class='line'>" + h + "</span>";
+                $e.html(h);
+            });
+            $("div.slide").lineselect({ lines: ".selectable span.line" });
+          });
+        </script>
 	</body>
 </html>
