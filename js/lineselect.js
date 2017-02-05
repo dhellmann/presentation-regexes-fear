@@ -12,7 +12,7 @@
 (function ($) {
     // Internal constants
     var container_class = "lineselect_selectable";
-    var sub_class = "line";
+    var sub_class = "span.line";
     
     // Global options
     var options = {
@@ -160,6 +160,7 @@
         // click handlers.
         return elements.each(function () {
             var container = $(this);
+			console.log('BEFORE: ', container.html());
             container.addClass(container_class);
             container.find(opts.lines)
                 .addClass(sub_class)
@@ -168,6 +169,7 @@
                         select_line(container, $(this), !e.ctrlKey);
                     }
                 );
+			console.log('AFTER: ', container.html());
         });
     };
 

@@ -919,19 +919,19 @@ HTML: Make this &lt;b>bold&lt;/b>.  This &lt;b>too&lt;/b>.
 showfile('ex4.txt', mark=[2, 10])
 ]]]-->
 <pre class="lineselect_selectable" data-trim data-noescape>
-<line>Abstract base classes are a form of interface checking more
-</line><mark><line>strict than individual :func:`hasattr()` checks for particular
-</line></mark><line>methods.  By defining an abstract base class, a common API
-</line><line>can be established for a set of subclasses.  This capability
-</line><line>is especially useful in situations where someone less familiar
-</line><line>with the source for an application is
-</line><line>
-</line><line>To start, define an abstract base class to represent the API
-</line><line>of a set of plug-ins for saving and loading data.  Set the
-</line><mark><line>metaclass for the new base class to :class:`ABCMeta`, and use
-</line></mark><line>decorators to establish the public API for the class.  The
-</line><line>following examples use ``abc_base.py``, which contains:
-</line></pre>
+<span class="line">Abstract base classes are a form of interface checking more
+</span><mark><span class="line">strict than individual :func:`hasattr()` checks for particular
+</span></mark><span class="line">methods.  By defining an abstract base class, a common API
+</span><span class="line">can be established for a set of subclasses.  This capability
+</span><span class="line">is especially useful in situations where someone less familiar
+</span><span class="line">with the source for an application is
+</span><span class="line">
+</span><span class="line">To start, define an abstract base class to represent the API
+</span><span class="line">of a set of plug-ins for saving and loading data.  Set the
+</span><mark><span class="line">metaclass for the new base class to :class:`ABCMeta`, and use
+</span></mark><span class="line">decorators to establish the public API for the class.  The
+</span><span class="line">following examples use ``abc_base.py``, which contains:
+</span></pre>
 
 <!--[[[end]]]-->
 
@@ -1251,17 +1251,13 @@ following examples use ``abc_base.py``, which contains:
 				]
 			});
 
-            <!-- Reveal.addEventListener( 'slidechanged', function( event ) { -->
-            <!-- // event.previousSlide, event.currentSlide, event.indexh, event.indexv -->
-            <!--  event.currentSlide.find('pre') -->
-            <!-- } ); -->
-
 		</script>
 
 
         <script>
+          /* find all of the lineselect nodes and add spans for their lines */
           $(function() {
-            $('.selectable').each(function (i, e) {
+            $('.lineselect_selectable').each(function (i, e) {
                 var $e = $(e);
                 var h = $e.html();
                 h = h.replace(/\n\n/g, "\n \n");
@@ -1269,7 +1265,10 @@ following examples use ``abc_base.py``, which contains:
                 h = "<span class='line'>" + h + "</span>";
                 $e.html(h);
             });
-            $("div.slide").lineselect({ lines: ".selectable span.line" });
+           /* enable lineselect for the line nodes */
+           $(".lineselect_selectable").each(function () {
+               $(this).lineselect({ lines: "span.line" });
+            });
           });
         </script>
 	</body>

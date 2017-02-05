@@ -16,7 +16,7 @@ def showfile(filename, extras='data-trim data-noescape', lines=None, mark=()):
         body = body[lines[0] - 1:lines[1]]
     for i, line in enumerate(body, 1):
         out = line.replace('<', '&lt;')
-        out = '<line>{}</line>'.format(out)
+        out = '<span class="line">{}</span>'.format(out)
         if i in mark:
             out = '<mark>{}</mark>'.format(out)
         print(out, end='')
