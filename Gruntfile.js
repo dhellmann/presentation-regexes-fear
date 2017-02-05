@@ -114,7 +114,7 @@ module.exports = function(grunt) {
 
 		watch: {
 			js: {
-				files: [ 'Gruntfile.js', 'js/reveal.js' ],
+				files: [ 'Gruntfile.js', 'js/reveal.js', 'js/lineselect.js' ],
 				tasks: 'js'
 			},
 			theme: {
