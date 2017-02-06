@@ -3,7 +3,7 @@ import re
 _pattern = re.compile('''
 ^
 (?P<ip>(\d{1,3}\.){3}\d{1,3})
-.*
+[^[]+
 \[(?P<date>[^]]+)\]
 [^"]*
 "((?P<method>\w+)\s+
