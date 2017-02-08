@@ -961,7 +961,7 @@ following examples use ``abc_base.py``, which contains:
 <!-- [[[cog
 parts = [
     (':func:`', ':func:`'),
-    ('hasattr', '([^(]+?)'),
+    ('hasattr', '([^(`]+)'),
     ('()', '(?:\(\))?'),
     ('`', '`'),
 ]
@@ -978,7 +978,7 @@ cog.out('</pre>\n')
 <pre data-trim style="font-size: 140%"><span class="fragment highlight-current-yellow" data-fragment-index="1">:func:`</span><span class="fragment highlight-current-yellow" data-fragment-index="2">hasattr</span><span class="fragment highlight-current-yellow" data-fragment-index="3">()</span><span class="fragment highlight-current-yellow" data-fragment-index="4">`</span>
 
 <span class="fragment" data-fragment-index="1">:func:`</span>
-<span class="fragment" data-fragment-index="2">([^(]+?)</span>
+<span class="fragment" data-fragment-index="2">([^(`]+)</span>
 <span class="fragment" data-fragment-index="3">(?:\(\))?</span>
 <span class="fragment" data-fragment-index="4">`</span>
 </pre>
@@ -999,7 +999,7 @@ cog.out('</pre>\n')
 <pre data-trim style="font-size: 140%">
 :func:`<span class="fragment highlight-current-yellow" data-fragment-index="1">hasattr</span>()`
 
-:func:`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(]+?)</span>(?:\(\))?`
+:func:`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(`]+)</span>(?:\(\))?`
 
 ``<span class="fragment highlight-current-yellow" data-fragment-index="1">\1</span>()``
 </pre>
@@ -1025,7 +1025,7 @@ func = re.compile(
     r'''
     :func:
     `
-    ([^(]+?)
+    ([^(`]+)
     (?:\(\))?
     `
     ''',
@@ -1048,7 +1048,7 @@ parts = [
     (':', ':'),
     ('class', '(?:class|const)'),
     (':`', ':`'),
-    ('ABCMeta', '([^(]+?)'),
+    ('ABCMeta', '([^(`]+)'),
     ('', '(?:\(\))?'),
     ('`', '`'),
 ]
@@ -1069,7 +1069,7 @@ cog.out('</pre>\n')
 <span class="fragment" data-fragment-index="1">:</span>
 <span class="fragment" data-fragment-index="2">(?:class|const)</span>
 <span class="fragment" data-fragment-index="3">:`</span>
-<span class="fragment" data-fragment-index="4">([^(]+?)</span>
+<span class="fragment" data-fragment-index="4">([^(`]+)</span>
 <span class="fragment" data-fragment-index="5">(?:\(\))?</span>
 <span class="fragment" data-fragment-index="6">`</span>
 </pre>
@@ -1094,7 +1094,7 @@ cog.out('</pre>\n')
 <pre data-trim style="font-size: 140%">
 :class:`<span class="fragment highlight-current-yellow" data-fragment-index="1">ABCMeta</span>`
 
-:(?:class|const):`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(]+?)</span>(?:\(\))?`
+:(?:class|const):`<span class="fragment highlight-current-yellow" data-fragment-index="1">([^(`]+)</span>(?:\(\))?`
 
 ``<span class="fragment highlight-current-yellow" data-fragment-index="1">\1</span>``
 </pre>
@@ -1124,7 +1124,7 @@ strip = re.compile(
     r'''
     :(?:class|data|const|command):
     `
-    ([^(]+?)
+    ([^(`]+)
     (?:\(\))?
     `
     ''',

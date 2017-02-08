@@ -7,7 +7,7 @@ func = re.compile(
     r'''
     :func:
     `
-    ([^(]+?)
+    ([^(`]+)
     (?:\(\))?
     `
     ''',
@@ -19,7 +19,7 @@ strip = re.compile(
     r'''
     :(?:class|data|const|command):
     `
-    ([^(]+?)
+    ([^(`]+)
     (?:\(\))?
     `
     ''',
