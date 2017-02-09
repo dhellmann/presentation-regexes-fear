@@ -11,7 +11,8 @@ HIGHLIGHT = (
 
 
 @capture
-def showregex(s, p, flags=0, heading='h3', classes=''):
+def showregex(s, p, flags=0, heading='h3', classes='',
+              pre_style='font-size: 100%'):
     if flags & re.VERBOSE:
         print('\n<pre data-trim data-noescape style="font-size: 80%">')
         print(p.replace('<', '&lt;'))
@@ -23,7 +24,7 @@ def showregex(s, p, flags=0, heading='h3', classes=''):
             classes=classes,
         ))
 
-    print('\n<pre data-trim data-noescape>')
+    print('\n<pre data-trim data-noescape style="{}">'.format(pre_style))
 
     pat = re.compile(p, flags)
 
