@@ -6,7 +6,7 @@ from tools.output import capture
 
 @capture
 def showfile(filename, extras='data-trim data-noescape', lines=None, mark=()):
-    print('<pre class="lineselect_selectable" {}>'.format(extras))
+    print('<pre class="lineselect_selectable" {}>'.format(extras), end='')
     with open(filename, 'r', encoding='utf-8') as f:
         body = f.readlines()
     if lines:
@@ -14,6 +14,8 @@ def showfile(filename, extras='data-trim data-noescape', lines=None, mark=()):
         # to pass a start and stop pair by converting from the 1
         # indexed list to the 0 indexed list for the start value.
         body = body[lines[0] - 1:lines[1]]
+    # Remove any trailing newline.
+    body[-1] = body[-1].rstrip()
     for i, line in enumerate(body, 1):
         out = line.replace('<', '&lt;')
         if i in mark:
@@ -24,7 +26,7 @@ def showfile(filename, extras='data-trim data-noescape', lines=None, mark=()):
 
 @capture
 def showcode(filename, extras='data-trim data-noescape', lines=None, mark=()):
-    print('<pre><code class="lineselect_selectable" {}>'.format(extras))
+    print('<pre><code class="lineselect_selectable" {}>'.format(extras), end='')
     with open(filename, 'r', encoding='utf-8') as f:
         body = f.readlines()
     if lines:
@@ -32,6 +34,8 @@ def showcode(filename, extras='data-trim data-noescape', lines=None, mark=()):
         # to pass a start and stop pair by converting from the 1
         # indexed list to the 0 indexed list for the start value.
         body = body[lines[0] - 1:lines[1]]
+    # Remove any trailing newline.
+    body[-1] = body[-1].rstrip()
     for i, line in enumerate(body, 1):
         out = line.replace('<', '&lt;')
         if i in mark:

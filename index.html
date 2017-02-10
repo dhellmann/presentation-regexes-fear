@@ -107,15 +107,13 @@ Does <span class="fragment highlight-yellow" data-fragment-index="1">t</span>he 
 showcode('ex1.py')
 runscript('ex1.py', fade_in=True)
 ]]]-->
-<pre><code class="lineselect_selectable" data-trim data-noescape>
-import re
+<pre><code class="lineselect_selectable" data-trim data-noescape>import re
 
 s = "Does the pattern match this text?"
 
 pattern = re.compile("t")
 
-print(pattern.search(s))
-</code></pre>
+print(pattern.search(s))</code></pre>
 
 <pre data-trim data-noescape class="fragment fade-in">
 &lt;_sre.SRE_Match object; span=(5, 6), match='t'>
@@ -851,11 +849,9 @@ response  : 200
 showcode('ex2.py', lines=(15, 18))
 runscript('ex2.py', 'ex2.log')
 ]]]-->
-<pre><code class="lineselect_selectable" data-trim data-noescape>
-for line in open('ex2.log', 'r', encoding='utf-8'):
+<pre><code class="lineselect_selectable" data-trim data-noescape>for line in open('ex2.log', 'r', encoding='utf-8'):
     parsed = _pattern.search(line).groupdict()
-    print('{ip:&lt;15}: {path}'.format(**parsed))
-</code></pre>
+    print('{ip:&lt;15}: {path}'.format(**parsed))</code></pre>
 
 <pre data-trim data-noescape>
 37.120.9.213   : /3/ipaddress/index.html
@@ -885,8 +881,7 @@ for line in open('ex2.log', 'r', encoding='utf-8'):
 showcode('ex3.py')
 runscript('ex3.py')
 ]]]-->
-<pre><code class="lineselect_selectable" data-trim data-noescape>
-import re
+<pre><code class="lineselect_selectable" data-trim data-noescape>import re
 
 bold = re.compile(r'\*{2}(.*?)\*{2}')
 
@@ -894,8 +889,7 @@ text = 'Make this **bold**.  This **too**.'
 html = bold.sub(r'&lt;b>\1&lt;/b>', text)
 
 print('Text:', text)
-print('HTML:', html)
-</code></pre>
+print('HTML:', html)</code></pre>
 
 <pre data-trim data-noescape>
 Text: Make this **bold**.  This **too**.
@@ -918,8 +912,7 @@ HTML: Make this &lt;b>bold&lt;/b>.  This &lt;b>too&lt;/b>.
 <!--[[[cog
 showfile('ex4.txt', mark=[2, 10])
 ]]]-->
-<pre class="lineselect_selectable" data-trim data-noescape>
-Abstract base classes are a form of interface checking more
+<pre class="lineselect_selectable" data-trim data-noescape>Abstract base classes are a form of interface checking more
 <mark>strict than individual :func:`hasattr()` checks for particular
 </mark>methods.  By defining an abstract base class, a common API
 can be established for a set of subclasses.  This capability
@@ -930,8 +923,7 @@ To start, define an abstract base class to represent the API
 of a set of plug-ins for saving and loading data.  Set the
 <mark>metaclass for the new base class to :class:`ABCMeta`, and use
 </mark>decorators to establish the public API for the class.  The
-following examples use ``abc_base.py``, which contains:
-</pre>
+following examples use ``abc_base.py``, which contains:</pre>
 
 <!--[[[end]]]-->
 
@@ -1023,8 +1015,7 @@ cog.out('</pre>\n')
 <!--[[[cog
 showcode('ex4.py', lines=(6, 16))
 ]]]-->
-<pre><code class="lineselect_selectable" data-trim data-noescape>
-func = re.compile(
+<pre><code class="lineselect_selectable" data-trim data-noescape>func = re.compile(
     r'''
     :func:
     `
@@ -1034,8 +1025,7 @@ func = re.compile(
     ''',
     flags=re.VERBOSE | re.MULTILINE,
 )
-text = func.sub(r'``\1()``', text)
-</code></pre>
+text = func.sub(r'``\1()``', text)</code></pre>
 
 <!--[[[end]]]-->
 
@@ -1127,8 +1117,7 @@ cog.out('</pre>\n')
 <!--[[[cog
 showcode('ex4.py', lines=(18, 28))
 ]]]-->
-<pre><code class="lineselect_selectable" data-trim data-noescape>
-strip = re.compile(
+<pre><code class="lineselect_selectable" data-trim data-noescape>strip = re.compile(
     r'''
     :(?:class|data|const|command):
     `
@@ -1138,8 +1127,7 @@ strip = re.compile(
     ''',
     flags=re.VERBOSE | re.MULTILINE,
 )
-text = strip.sub(r'``\1``', text)
-</code></pre>
+text = strip.sub(r'``\1``', text)</code></pre>
 
 <!--[[[end]]]-->
 
@@ -1240,10 +1228,12 @@ following examples use ``abc_base.py``, which contains:
 				// n, page down
 		            78: _next_slide,
                     34: _next_slide,
-				<!-- // h, left -->
-				<!-- case 72: case 37: navigateLeft(); break; -->
-				<!-- // l, right -->
-				<!-- case 76: case 39: navigateRight(); break; -->
+		        // h, left
+                    72: _prev_slide,
+                    37: _prev_slide,
+				// l, right
+                    76: _next_slide,
+                    39: _next_slide,
 				<!-- // k, up -->
 				<!-- case 75: case 38: navigateUp(); break; -->
 				<!-- // j, down -->
