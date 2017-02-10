@@ -330,3 +330,6 @@ body {
     border: .15em solid yellow;
     padding: .15em .15em .05em .15em;
     margin: -.30em -.30em -.20em -.30em; }
+
+.reveal aside.controls-off {
+  visibility: hidden; }

@@ -1208,9 +1208,11 @@ following examples use ``abc_base.py``, which contains:
               if (_reveal_navigation_active()) {
                   console.log('reveal: turning off nav');
                   document.querySelector( '.reveal' ).classList.add('reveal-nav-off');
+                  document.querySelector('aside.controls').classList.add('controls-off');
               } else {
                   console.log('reveal: turning on nav');
                   document.querySelector( '.reveal' ).classList.remove('reveal-nav-off');
+                  document.querySelector('aside.controls').classList.remove('controls-off');
               };
           };
 
