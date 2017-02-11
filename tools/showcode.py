@@ -45,10 +45,15 @@ def showcode(filename, extras='data-trim data-noescape', lines=None, mark=()):
 
 
 @capture
-def runscript(filename, *args, extras='data-trim data-noescape', fade_in=False, mark=()):
+def runscript(filename, *args, extras='data-trim data-noescape', fade_in=False, mark=(), selectable=False):
     print('<pre {}'.format(extras), end='')
+    classes = []
     if fade_in:
-        print(' class="fragment fade-in"', end='')
+        classes += ['fragment', 'fade-in']
+    if selectable:
+        classes.append('lineselect_selectable')
+    if classes:
+        print(' class="{}"'.format(' '.join(classes)), end='')
     print('>')
     result = subprocess.run(
         ['python3', filename] + list(args),
